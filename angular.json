@@ -73,10 +73,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "Trade_Your_Inventory:build:production"
+              "buildTarget": "Trade_Your_Inventory:build:production"
             },
             "development": {
-              "browserTarget": "Trade_Your_Inventory:build:development"
+              "buildTarget": "Trade_Your_Inventory:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Trade_Your_Inventory:build"
+            "buildTarget": "Trade_Your_Inventory:build"
           }
         },
         "test": {

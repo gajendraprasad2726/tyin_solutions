@@ -1,0 +1,74 @@
+<div *ngIf="view === 'grid'">
+  <div class=" card text-center">
+    <div class="overflow-hidden d-flex justify-content-center align-items-center">
+      <img src="../../assets/Images/{{product.productCategory?.subCategory}}/1.jpg" alt=""
+            class="card-img-top" OpenProductDetails [productId]="product.id" [buyFlag]="buyFlag">
+    </div>
+    <div class="card-body" OpenProductDetails [productId]="product.id" [buyFlag]="buyFlag">
+      <h5 class="card-title "> {{product.title}} </h5>
+      <p class="card-text"> ------------------------------ </p>
+      <p class="card-text " *ngIf="((product.quantity - cartOrderedQty.qty) > 0)"> Qty : {{(product.quantity-cartOrderedQty.qty)| number:'1.0-0' }} {{product.uom }} </p>
+      <p class="card-text " *ngIf="((product.quantity - cartOrderedQty.qty) <= 0)"> Out of Stock </p>
+      <p class="card-text "> Price : {{product.price| number:'1.0-0' }} Rs/{{product.uom}} </p>
+      <p class="card-text "><img src="assets/location.png" alt="Location Pin" class="location-icon"> {{product.fromCity}},{{product.fromState}} </p>
+      <a [href]="'tel:' + product.productContactNo" class="phone-link" *ngIf="buyFlag"><img src="assets/mobile.jpg" class="location-icon">{{ product.productContactNo }}</a>
+    </div>
+  </div>
+</div>
+<div class="list-container" *ngIf="view === 'list'">
+  <div class="list-item">
+    <div class="col overflow-hidden d-flex justify-content-center align-items-center">
+      <img src="../../assets/Images/{{product.productCategory?.subCategory}}/1.jpg"
+           class="card-img-list" alt="Product Image" OpenProductDetails [productId]="product.id"
+           [buyFlag]="buyFlag">
+    </div>
+    <div class="col d-flex " OpenProductDetails [productId]="product.id" [buyFlag]="buyFlag">
+      <div class="card-body-list">
+        <h5 class="card-title-list"> {{product.title}} </h5>
+        <p></p>
+        <p class="card-text-list " *ngIf="((product.quantity - cartOrderedQty.qty) > 0)"> Quantity : {{(product.quantity-cartOrderedQty.qty)| number:'1.0-0' }} </p>
+        <p class="card-text-list " *ngIf="((product.quantity - cartOrderedQty.qty) <= 0)"> Out of Stock </p>
+        <p class="card-text-list "> Price : {{product.price| number:'1.0-0' }} Rs/{{product.uom}} </p>
+      </div>
+    </div>
+    <div class="col-5 d-flex " OpenProductDetails [productId]="product.id" [buyFlag]="buyFlag">
+      <div class="card-body-list">
+        <p class="card-text-list "> {{product.description}} </p>
+      </div>
+    </div>
+    <div class="col d-flex " OpenProductDetails [productId]="product.id" [buyFlag]="buyFlag">
+      <div class="card-body-list">
+        <p class="card-text-list "><img src="assets/location.png" alt="Location Pin" class="location-icon"> {{product.fromCity}},{{product.fromState}} </p>
+        <p class="card-text-list "><img src="assets/mobile.jpg" class="location-icon"> {{product.productContactNo}} </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Item View -->
+<div class="grid-view" *ngIf="view === 'currcartitem'" >
+  <div class="card-cart text-center" >
+    <div class="overflow-hidden d-flex justify-content-center align-items-center">
+      <img src="../../assets/Images/{{product.productCategory?.subCategory}}/1.jpg" alt=""
+           class="card-img-top" OpenProductDetails [productId]="product.id" [buyFlag]="buyFlag" [cartFlag]="cartFlag">
+    </div>
+    <div class="card-body-cart">
+      <p class="card-title-cart "> {{product.title}} </p>
+      <p class="card-text-cart ">{{cartIt.orderedQty}} {{product.uom}}</p>
+      <p class="card-text-cart " *ngIf="!cartIt.bidPrice"> Rs {{(product.price * cartIt.orderedQty)| number:'1.0-0' }}</p>
+      <p class="card-text-cart " *ngIf="cartIt.bidPrice"> Rs {{(cartIt.bidPrice * cartIt.orderedQty)| number:'1.0-0' }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="grid-view" *ngIf="view === 'prevcartitem'">
+  <div class="card-cart text-center" style="width: auto; height: stretch">
+    <div class="overflow-hidden d-flex justify-content-center align-items-center">
+      <img src="../../assets/Images/{{product.productCategory?.subCategory}}/1.jpg" alt=""
+           class="card-img-top" OpenProductDetails [productId]="product.id" [buyFlag]="buyFlag" [cartFlag]="cartFlag">
+    </div>
+    <div class="card-body-cart">
+      <p class="card-title-cart"> {{product.title}} </p>
+    </div>
+  </div>
+</div>

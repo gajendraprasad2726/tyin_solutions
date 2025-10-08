@@ -1,0 +1,273 @@
+<nav class="navbar">
+  <ul class="nav-list">
+    <li class="nav-item"><a class="nav-link" (click)="toggleAboutVisibility()">About Us</a></li>
+    <li class="nav-item"><a class="nav-link" (click)="toggleVisionVisibility()">Our Vision</a></li>
+    <li class="nav-item"><a (click)="toggleFeatureVisibility()" class="nav-link">Key Features</a></li>
+    <li class="nav-item"><a (click)="toggleWhyUsVisibility()" class="nav-link">Why Us</a></li>
+  </ul>
+</nav>
+
+<div class="about-us-container">
+  <section class="company-details" *ngIf="isAboutVisible">
+    <section class="slogan">
+      <h1 class="animated-slogan">Trade Smart, Live Green!</h1>
+    </section>
+
+    <h5 class=""> About Us</h5>
+    
+    <div class="about-us-content">
+      <h6 style="color:Black; background-color:powderblue;padding:5px;"><b>Trade Your Inventory</b></h6>
+      <!--<i style="color:aliceblue">Revolutionizing Commerce for Non-Moving Inventory & Waste Management.</i>-->
+      <!--<br />
+  <br />-->
+      At <i><b>Trade Your Inventory</b></i>, we are pioneering a transformative platform that connects Buyers and
+      Sellers of New Products, Non-Moving Inventory and Waste Materials.
+      We’re not just redefining commerce — we’re reshaping how businesses perceive and manage surplus stock
+      and waste. Whether it’s unused goods or by-products waiting for disposal,
+      <i>Trade Your Inventory</i> creates a dynamic marketplace where sustainability meets profitability.
+      <br />
+      <br />
+      <h6 style="color:white"><b>For Sellers</b></h6>
+      We simplify every aspect of trading your non-moving inventory with other companies. Our platform helps you:
+      <br /><b>&nbsp;&nbsp;&nbsp;&nbsp;1.  Optimize inventory costs </b>by unlocking value from surplus stock.
+      <br /><b>&nbsp;&nbsp;&nbsp;&nbsp;2. Protect your trade secrets </b>with secure, confidential transactions.
+      <br /><b>&nbsp;&nbsp;&nbsp;&nbsp;3. Promote environmental responsibility </b>through sustainable inventory management.
+      <br /><b>&nbsp;&nbsp;&nbsp;&nbsp;4. Minimize regulatory burdens</b> with streamlined compliance support.
+      <br />
+      <br />
+      <h6 style="color:white"><b>For Buyers</b></h6>
+      Our platform helps you leverage:
+      <br /><b>&nbsp;&nbsp;&nbsp;&nbsp;1. Reduced material costs</b> by accessing surplus inventory at competitive prices
+      <br /><b>&nbsp;&nbsp;&nbsp;&nbsp;2. Certified quality products</b> you can trust
+      <br /><b>&nbsp;&nbsp;&nbsp;&nbsp;3. Transparent transactions</b> for full visibility and confidence
+      <br /><b>&nbsp;&nbsp;&nbsp;&nbsp;4. Materials with minimum lead time</b> to keep your operations running smoothly
+      <br />
+      <br />
+      Embark on a journey with <i>Trade Your Inventory</i>, where Certified Quality meets responsible Commerce.
+      Together, let's shape a future where Excess Inventory is an opportunity, not a challenge.<i>Trade Your Inventory</i>, Connecting buyers and sellers for a Smarter, Greener tomorrow.
+      <br />
+
+      <br />
+      <br />
+      <h6 style="color:Black; background-color:powderblue;padding:5px;"><b>TYIn-AI</b></h6>
+      In addition to our marketplace, we also offer AI-powered solutions that help organizations uncover hidden efficiencies, streamline operations, and make smarter, data-driven decisions.
+      By transforming raw data into actionable insights, our technology empowers businesses to operate with greater speed, precision, and minimizing environmental impact, we help turn complexity into clarity—and challenges into opportunities.
+      <br />
+      <br />
+      With deep industry knowledge and cutting-edge AI capabilities, we help Construction, Chemical, Manufacturing & other industries unlock hidden value within their operations—turning data into insights, and insights into strategic action.
+      We provide customized AI solutions that address real-world challenges in the most complex industries:
+      <br />
+      <br />
+      <ul style="color:aliceblue">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;AI-based resource planning and cost forecasting</li>
+        <li> &nbsp;&nbsp;&nbsp;&nbsp;Predictive maintenance for equipment and machinery</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Intelligent project risk analysis and schedule optimization</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Automated material usage tracking and waste reduction</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Predictive quality control for improved product consistency</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Intelligent inventory and supply chain management      </li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Real-time monitoring for regulatory compliance and safety</li>
+      </ul>
+      We go beyond technology implementation — we enable intelligent, sustainable, and future-ready operations in the industries that drive global progress.
+    </div>
+  </section>
+
+  <section class="company-details" *ngIf="isVisionVisible">
+    <div class="row d-flex align-items-center">
+      <!--<div class="col-6">
+      <img src="assets/founder.jpg" alt="Founder" class="founder-photo" />
+      <p></p>
+      <p class="founder-name"><strong>Gajendra Prasad</strong><br />Director & Chairman</p>
+    </div>-->
+      <div class="">
+        <h5>Our Vision</h5>
+        <br/>
+        <div class="founder-vision">
+          Our mission is simple yet powerful: to turn excess into opportunity and waste into value.
+          <br />
+          In a world driven by innovation and sustainability, <b><i>Trade Your Inventory</i> </b> envisions a future where every resource is used efficiently, waste is minimized, and sustainability thrives.
+          Our commitment lies in building a marketplace that not only connects buyers and sellers but also ensures that every exchange promotes responsible and sustainable practices.
+          <div style="color:azure;position:absolute; right:30px;"> - Trade Your Inventory</div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <!--<h6 style="color:azure"><b>TYIn-AI</b></h6>-->
+          In the same spirit of innovation, <b><i>TYIn-AI</i></b> offers tailored AI solutions designed to transform industries, elevate decision-making, and drive operational excellence.
+          <br />
+          Our AI-powered programs help businesses uncover hidden efficiencies, automate processes, and make smarter, data-driven choices. By turning raw data into actionable insights, we empower organizations to operate with greater speed, accuracy, and sustainability — transforming complexity into clarity and opportunity.
+
+          <div style="color:azure;position:absolute; right:30px;"> - TYIn AI</div>
+          <!--In the same vein, We also offer AI solutions tailored to transform your industry, driving efficiency and accelerating performance.-->
+        </div>
+      </div>
+      <div class="col-6">
+      </div>
+    </div>
+    <!--<div class="row d-flex align-items-center">
+      <div class="col">
+        <h5></h5>
+        <div class="cofounder-vision">
+          Excess Inventory refers to surplus materials, chemicals, and products that are overstocked or ordered in excess of what is required for production.
+          Like other industries, Excess Inventory in the Chemical sector can lead to inefficiencies, increased costs,
+          regulatory compliance issues and potential waste, especially when dealing with hazardous or perishable materials.
+          Trade Your Inventory is a platform that connects buyers and sellers for non-moving inventories & waste management.
+          <div style="text-align:right">
+            -- Dinesh ( CTO - Chemical ) <br />
+          </div>
+        </div>
+
+        <div class="cofounder-vision">
+          Excess inventory in the construction industry refers to the materials, tools, and supplies that are overstocked or
+          ordered in excess of what is needed for a particular project. These surplus items can sit idle, taking up valuable space
+          and resources, and may not be used before they become obsolete or degrade. Excess inventory can cause unnecessary costs,
+          waste,storage issues and inefficiencies on construction sites. Trade Your Inventory is a platform that connects buyers and
+          sellers of excess inventory, facilitating the exchange of surplus materials & waste management.
+          <div style="text-align:right">
+            -- Jayant ( CTO - Construction )
+          </div>
+        </div>
+        <div class="cofounder-vision">
+          AI in the Construction & Chemical industries is a total game-changer; revolutionizing everything from planning and monitoring to
+          on-site execution and safety. With smarter tools, predictive insights, and automation, AI is helping construction teams
+          build faster, safer, and more sustainably than ever before. We provide AI solutions designed to transform your industry,
+          driving efficiency, boosting performance, and unlocking innovation at every level of your operation.
+          <div style="text-align:right">
+            -- Jayant ( CTO - AI )
+          </div>
+        </div>
+      </div>
+    </div>-->
+  </section>
+  <section class="list-container" *ngIf="isFeaturesVisible">
+    <h5>Key Features:</h5>
+    <ul class="feature-list">
+
+      <li class="feature-item">
+        <div class="title">
+          Circular Economy:
+        </div>
+        <p class="description">
+          Our commitment to sustainability is deeply rooted in the principles of the circular economy—an economic model where products, materials, and resources are kept in use for as long as possible.
+          <!--Our commitment to sustainability goes hand in hand with our focus on certified
+      transactions. By ensuring the quality of products, we contribute to the creation of a circular economy where
+      resources are reused responsibly.-->
+        </p>
+      </li>
+      <li class="feature-item">
+        <div class="title">
+          Streamlined Process:
+        </div>
+        <p class="description">
+          Trade your Inventory offers a user-friendly platform that simplifies the buying and
+          selling process. Our commitment to transparency ensures that both parties have a clear understanding of the
+          products involved.
+        </p>
+      </li>
+      <li class="feature-item">
+        <div class="title">
+          Efficient Algorithm:
+        </div>
+        <p class="description">
+          By analyzing key factors such as product type, industry relevance & location, our system optimizes the value of non-moving inventories while minimizing time and effort for both parties.
+          <!--Our advanced algorithms ensure precise matching between buyers and sellers,
+      optimizing the value of non-moving inventories.-->
+        </p>
+      </li>
+      <li class="feature-item">
+        <div class="title">
+          Cost Savings:
+        </div>
+        <p class="description">
+          Buyers & Sellers not only enjoy cost-effective solutions but also have the assurance that the
+          products they receive meet certified quality standards & delivered right.
+          <!--Buyers not only enjoy cost-effective solutions but also have the assurance that the
+      products they receive meet certified quality standards.-->
+        </p>
+      </li>
+      <!--<li class="feature-item">-->
+      <!--<div class="title">
+    Certified Test Facilities:
+  </div>
+  <p class="description">
+    We understand the importance of product quality. That's why we provide
+    certified test facilitation and labs, ensuring that buyers receive products that meet the highest standards.
+  </p>-->
+      <!--</li>-->
+    </ul>
+  </section>
+  <section class="list-container" *ngIf="isWhyUsVisible">
+    <h5>Why Choose Trade your Inventory?</h5>
+    <ul class="feature-list">
+      <li class="feature-item">
+        <div class="title">
+          Transparency:
+        </div>
+        <p class="description">
+          Our platform promotes transparency at every step, providing a trustworthy environment for
+          buyers and
+          sellers.
+        </p>
+      </li>
+      <li class="feature-item">
+        <div class="title">
+          Innovation:
+        </div>
+        <p class="description">
+          Leveraging cutting-edge technology, Our platform sets new standards for the efficient management of Non-Moving Inventories & Scrap Waste.
+        </p>
+      </li>
+      <li class="feature-item">
+        <div class="title">
+          Sustainability:
+        </div>
+        <p class="description">
+          Trade your Inventory is dedicated to creating a sustainable future by promoting responsible consumption and waste reduction.
+        </p>
+      </li>
+      <li class="feature-item">
+        <div class="title">
+          Community:
+        </div>
+        <p class="description">
+          Join a community of businesses committed to Sustainability and enhanced Credibility.
+          <!--Join a community of businesses committed to sustainability and certified transactions.-->
+        </p>
+      </li>
+    </ul>
+  </section>
+  <section class="company-details" *ngIf="isWhyUsVisible">
+    <h5> What makes us different — and better </h5>
+      <!--<h5>What Sets Us Apart</h5>-->
+      <p class="">
+        At Trade Your Inventory, we go beyond traditional marketplaces where Innovation meets eco-responsibility.
+        <!--In addition to facilitating connections between buyers and sellers,
+        we also provide certified test facilitation and labs.
+        This means that both parties can be confident in the quality and authenticity of the products being exchanged,
+        adding an extra layer of trust to every transaction.-->
+      </p>
+
+      <!--<p class="  ">
+      Embark on a journey with TYIn, where certified quality meets responsible commerce. Together,
+      let's
+      shape a future where excess inventory is an opportunity, not a challenge. TYIn, connecting buyers
+      and
+      sellers for a smarter, greener tomorrow.
+    </p>-->
+  </section>
+  <!--<section class="team" *ngIf="isMeetVisible">
+    <h5>Meet Our Team</h5>
+    <div class="team-members">
+      <div class="team-member">
+        <img src="assets/team1.jpg" alt="Team Member 1">
+        <h3>John Doe</h3>
+        <p>CEO</p>
+      </div>
+      <div class="team-member">
+        <img src="assets/team2.jpg" alt="Team Member 2">
+        <h3>Jane Smith</h3>
+        <p>CTO</p>
+      </div>-->
+  <!-- Add more team members here -->
+</div>
+  <!--</section>-->

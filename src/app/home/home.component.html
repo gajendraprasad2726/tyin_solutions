@@ -1,0 +1,10 @@
+<div class="header-m1 p-2 border my-rounded-corner">
+  <h5 class="fst-italic" style="text-align: left; ">Special Offers for you </h5>
+  <div class="row">
+    <div class="item" *ngFor="let product of products">
+      <app-suggested-products [product]="product" [buyFlag]="buyFlag"></app-suggested-products>
+    </div>
+  </div>
+</div>
+
+

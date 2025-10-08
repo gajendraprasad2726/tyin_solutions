@@ -1,0 +1,44 @@
+<div *ngIf="pendingProducts && pendingProducts.length > 0">
+  <h5>Pending Products for Approval</h5>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Title</th><th>Description</th><th>Quantity</th><th>Price</th><th>From</th><th>Contact</th><th>Details</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of pendingProducts">
+        <td data-label="ID">{{p.id}}</td>
+        <td data-label="Title">{{p.title}}</td>
+        <td data-label="Description">{{p.description}}</td>
+        <td data-label="Quantity">{{p.quantity}}</td>
+        <td data-label="Price">{{p.price}}</td>
+        <td data-label="From">{{p.fromCity}},{{p.fromState}}</td>
+        <td data-label="Contact">{{p.productContactNo }}</td>
+        <td data-label="Details"><div OpenProductDetails [productId]="p.id">Click here</div></td>
+        <td data-label="Actions">
+          <button (click)="approve(p.id)">Approve</button>
+          <button (click)="reject(p.id)">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="!pendingProducts || pendingProducts.length === 0">
+  <p>No products pending approval.</p>
+</div>
+
+<!--<div class="product-background p-3 mb-2 text-white">
+  <div class="my-container mx-auto">
+    <div class="product-container">
+      <div class="product-grid">
+        <div class="item" *ngFor="let product of pendingProducts">
+          <app-product [product]="product"></app-product>
+          <div class="button-group">
+            <button (click)="approve(product.id)" class="approve-btn">Approve</button>
+            <button (click)="reject(product.id)" class="reject-btn">Reject</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+

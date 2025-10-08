@@ -1,0 +1,26 @@
+
+  <div *ngIf="showLoginPopup" class="login-popup">
+    <div class="login-popup-overlay" (click)="closeLoginPopup()"></div>
+    <div class="login-popup-content">
+      <div> Enquiry for - {{quotationTitle}}</div>
+
+
+        <form [formGroup]="mobileForm" (ngSubmit)="onSubmit()">
+            <div class="mobile-input">
+              <input id="mobileNumber"
+                     type="text"
+                     class="form-control"
+                     formControlName="mobileNumber"
+                     placeholder="Enter your Mobile Number" />
+            </div>
+            <!-- Error message -->
+            <div *ngIf="MobileNumber?.invalid && MobileNumber?.touched" class="error-message">
+              <small *ngIf="MobileNumber?.hasError('required')">Mobile number is required.</small>
+              <small *ngIf="MobileNumber?.hasError('pattern')">Mobile number must be 10 digits and contain only numbers.</small>
+            </div>
+            <button type="submit" class="submit-btn" [disabled]="mobileForm.invalid">Submit</button>
+          <div class="quotation-msg" > {{msg}}</div>
+        </form>
+    </div>
+  </div>
+

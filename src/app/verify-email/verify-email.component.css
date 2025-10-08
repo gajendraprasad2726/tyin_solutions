@@ -1,0 +1,40 @@
+.verify-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message-box {
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.success {
+  background-color: #e6ffed;
+  border: 1px solid #28a745;
+  color: #218838;
+  box-shadow: 0 2px 6px rgba(40, 167, 69, 0.2);
+}
+
+.fail {
+  background-color: #ffe6e6;
+  border: 1px solid #dc3545;
+  color: #c82333;
+  box-shadow: 0 2px 6px rgba(220, 53, 69, 0.2);
+}
+/*
+.info-text {
+  font-size: 14px;
+  color: #6c757d;
+}
+*/

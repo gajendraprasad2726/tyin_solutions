@@ -1,0 +1,73 @@
+<div class="header-m1">
+  <div class="complaint-container">
+    <h5>Complaints</h5>
+
+    <!-- New Complaint Form -->
+    <div class="complaint-form">
+      <header>Add New Complaint</header>
+      <form (ngSubmit)="submitComplaint()">
+        <div>
+          <input type="text"
+                 id="title"
+                 [(ngModel)]="newComplaint.title"
+                 name="title"
+                 required
+                 placeholder="Title" />
+        </div>
+        <div>
+          <textarea id="description"
+                    [(ngModel)]="newComplaint.description"
+                    name="description"
+                    required
+                    placeholder="Description"></textarea>
+        </div>
+        <button type="submit">Submit Complaint</button>
+      </form>
+    </div>
+
+    <!-- Feedback Messages -->
+    <p class="message" *ngIf="blankComplaintFlag">
+      Kindly enter your complaint in the Title & Description fields above.
+    </p>
+    <p class="message" *ngIf="complaintFlag">
+      Your complaint has been registered.
+    </p>
+    <br />
+    <br />
+    <h6>Grievance Contact</h6>
+    <p>For unresolved complaints or assistance, please contact our Grievance Officer:</p>
+    <ul>
+      <!--<li><strong>Name:</strong> Gajendra Prasad</li>
+      <li><strong>Email:</strong> gajendraprasad2726@gmail.com</li>
+      <li><strong>Phone:</strong> +91-7725947372</li>
+      <li><strong>Hours:</strong> Monday to Friday, 10 AM – 6 PM</li>-->
+    </ul>
+
+  </div>
+</div>
+
+<!-- Spacer -->
+<div><p></p></div>
+
+<!-- Complaint List Section -->
+<div class="header-m1">
+  <div class="complaint-container">
+    <h5>Consumer Complaints</h5>
+
+    <!-- Empty State -->
+    <div *ngIf="complaints.length === 0">
+      <p>No complaints have been submitted yet.</p>
+    </div>
+
+    <!-- List of Complaints -->
+    <div *ngFor="let complaint of complaints" class="review-card">
+      <div class="review-header">
+        <div>{{ complaint.title }}</div>
+        <div>Status: {{ complaint.status }}</div>
+      </div>
+      <div class="review-body">
+        <p>{{ complaint.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

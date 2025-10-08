@@ -1,0 +1,145 @@
+<div *ngIf="showRegisterPopup" class="register-popup">
+  <div class="register-popup-overlay" (click)="closeRegisterPopup()"></div>
+  <div class="register-popup-content">
+    <div class="register-popup-header">
+      <h4>Register</h4>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <!-- First Name and Last Name -->
+      <div class="form-group">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="firstName" class="form-label">First Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName">
+
+            <!-- Errors -->
+            <div class="error-message"
+                 *ngIf="FirstName.errors?.['required'] && (FirstName.dirty || FirstName.touched)">
+              First Name is Required
+            </div>
+            <div class="error-message"
+                 *ngIf="!!FirstName.errors?.['minlength'] && (FirstName.dirty || FirstName.touched)">
+              First Name is too Short. At least 2 characters.
+            </div>
+            <div class="error-message"
+                 *ngIf="FirstName.errors?.['pattern'] && (FirstName.dirty || FirstName.touched)">
+              Name should start with an alphabet.
+            </div>
+          </div>
+          <div class="col">
+            <label for="lastName" class="form-label">Last Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName">
+
+            <!-- Errors -->
+            <div class="error-message"
+                 *ngIf="LastName.errors?.['required'] && (LastName.dirty || LastName.touched)">
+              Last Name is Required
+            </div>
+            <div class="error-message"
+                 *ngIf="!!LastName.errors?.['minlength'] && (LastName.dirty || LastName.touched)">
+              Last Name is too Short. At least 2 characters.
+            </div>
+            <div class="error-message"
+                 *ngIf="LastName.errors?.['pattern'] && (LastName.dirty || LastName.touched)">
+              Name should start with an alphabet.
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address<span class="text-danger">*</span></label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+
+          <!-- Errors -->
+          <div class="error-message" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+            Email is Required
+          </div>
+          <div class="error-message" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
+            Email is Invalid.
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="mb-3">
+          <label for="address" class="form-label">Address<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="address" formControlName="address">
+
+          <!-- Errors -->
+          <div class="error-message" *ngIf="Address.errors?.['required'] && (Address.dirty || Address.touched)">
+            Address is Required
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <div class="mb-3">
+          <label for="mobile" class="form-label">Mobile<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="mobile" formControlName="mobile">
+          <div class="error-message" *ngIf="Mobile.errors?.['required'] && (Mobile.dirty || Mobile.touched)">
+            Mobile No is Required
+          </div>
+          <div class="error-message" *ngIf="Mobile?.errors?.['invalidMobile']">
+
+            Invalid mobile number! Please enter a 10-digit number.
+
+          </div>
+          <!-- Errors -->
+
+        </div>
+
+        <!-- Password and Repeat Password -->
+        <div class="row">
+          <div class="col mb-3">
+            <label for="password" class="form-label">Password<span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+
+            <!-- Errors -->
+            <div class="error-message" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
+              Password is Required
+            </div>
+            <div class="error-message"
+                 *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.dirty || Password.touched)">
+              Password should be at least 6 and at the max 15 characters long.
+            </div>
+          </div>
+
+          <div class="col mb-3">
+            <label for="rePassword" class="form-label">Confirm Password<span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="rePassword" formControlName="rePassword">
+            <div class="error-message" *ngIf="RePassword.errors?.['required'] && (RePassword.dirty || RePassword.touched)">
+              Please re-enter password
+            </div>
+            <div class="error-message" *ngIf="registerForm.errors?.['passwordMismatch']">
+              Passwords not matched.
+            </div>
+          </div>
+        </div>
+
+        <!-- Create Account Button -->
+        <div>
+          <button type="submit" class="submit-btn" [disabled]="registerForm.invalid || displaySpinner">
+            {{ displaySpinner ? 'Creating Account...' : 'Create Account' }}
+          </button>
+        </div>
+
+        <div class="success-message" *ngIf="messageType && clickedRegisterButton">
+          <div class="message-icon">
+            <i class="fas fa-check-circle"></i> <!-- Font Awesome check-circle icon -->
+          </div>
+          <div class="message-text">
+            {{message}}
+          </div>
+        </div>
+        <div class="fail-message" *ngIf="!messageType && clickedRegisterButton">
+          <div class="message-icon">
+            <i class="fas fa-exclamation-circle"></i> <!-- Font Awesome check-circle icon -->
+          </div>
+          <div class="message-text">
+            {{message}}
+          </div>
+        </div>
+      </div>
+        <!--</div>-->
+    </form>
+  </div>
+</div>

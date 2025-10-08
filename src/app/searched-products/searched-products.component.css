@@ -1,0 +1,128 @@
+.filters-state {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 15%;
+  outline: auto;
+  color: blanchedalmond;
+}
+
+.filters-city {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 35%;
+  outline: auto;
+  color: blanchedalmond;
+}
+
+.filter-input {
+  padding: 2px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+
+.filter-text {
+  position: relative;
+  color: black;
+  font-weight: 500;
+  background-color: white;
+}
+
+.product-background {
+  background-color: #343114;
+  
+}
+
+.search-results{
+    margin-top: 10px;
+}
+
+.row {
+  display: grid; /* Use grid layout */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* Create two equal-width columns */
+  gap: 12px; /* Adds space between the items */
+  margin-top: 5px; /* Optional: Adds some margin at the top */
+}
+
+.item {
+  padding: 10px; /* Optional: Adds some padding inside each item */
+  /*border: 1px solid #ccc;*/ /* Optional: Adds a border for visual distinction */
+}
+
+/* Responsive design */
+/*@media (max-width: 768px) {
+  .filters-state,
+  .filters-city {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .filters-state {
+    left: auto;
+  }
+
+  .filters-city {
+    left: auto;
+  }
+
+  .filter-input {
+    font-size: 12px;
+    padding: 1px;
+  }
+
+  .filter-text {
+    font-size: 14px;
+  }
+}*/
+
+@media (max-width: 768px) {
+  .filters-state {
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 30%;
+    outline: auto;
+    color: blanchedalmond;
+  }
+  .filters-city {
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 60%;
+    outline: auto;
+    color: blanchedalmond;
+    /*    flex-direction: column;*/
+    /*    align-items: center;*/
+  }
+
+  .filter-input {
+    font-size: 10px;
+    padding: 0.5px;
+  }
+
+  .filter-text {
+    font-size: 12px;
+  }
+  .row {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr 1fr; /* Create two equal-width columns */
+    gap: 8px; /* Adds space between the items */
+  }
+
+  .item {
+    padding: 6px; /* Optional: Adds some padding inside each item */
+    /*border: 1px solid #ccc;*/ /* Optional: Adds a border for visual distinction */
+  }
+}
+
+

@@ -1,0 +1,62 @@
+<div *ngIf="showLoginPopup" class="login-popup">
+  <div class="login-popup-overlay" (click)="closeLoginPopup()"></div>
+  <div class="login-popup-content">
+    <div class="login-popup-header">
+      <h4>Login</h4>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+        <div class="error-message" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+          Email is Required
+        </div>
+        <div class="error-message" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
+          Email is Invalid.
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="pwd" class="form-label">Password</label>
+        <input type="password" class="form-control" id="pwd" formControlName="pwd">
+        <div class="error-message" *ngIf="PWD.errors?.['required'] && (PWD.dirty || PWD.touched)">
+          Password is Required
+        </div>
+        <div class="error-message"
+             *ngIf="PWD.errors?.['minlength'] || PWD.errors?.['maxlength'] && (PWD.dirty || PWD.touched)">
+          Password should be at least 6 and at the max 15 characters long.
+        </div>
+      </div>
+      <div class="forgotPassword">
+        <a [routerLink]="['/forgot-password']">Forgot Password</a>
+        <div class="forgotPasswordText">{{ forgotPasswordMsg }}</div>
+      </div>
+      <div>
+        <button type="submit" [disabled]="loginForm.invalid" class="submit-btn" (click)="login()">
+          Login
+        </button>
+      </div>
+      <div *ngIf="clickedLogInButton">
+        <div *ngIf="messageType" class="success-message">
+          <div class="message-icon">
+            <i class="fas fa-check-circle"></i> <!-- Font Awesome check-circle icon -->
+          </div>
+          <div class="message-text">
+            {{message}}
+          </div>
+        </div>
+        <div *ngIf="!messageType" class="fail-message">
+          <div class="message-icon">
+            <i class="fas fa-times-circle"></i> <!-- Font Awesome check-circle icon -->
+          </div>
+          <div class="message-text">
+            {{message}}
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

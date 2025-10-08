@@ -1,0 +1,93 @@
+.filters-state {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 15%;
+  outline:auto;
+  color: blanchedalmond;
+}
+
+.filters-city {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 35%;
+  outline: auto;
+  color: blanchedalmond;
+}
+
+.filter-input {
+  padding: 2px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+
+.filter-text {
+  position: relative;
+  color:black;
+  font-weight: 500;
+  background-color: white;
+}
+
+.product-background {
+  background-color: #343114;
+}
+
+.row {
+  display: grid; /* Use grid layout */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* Create two equal-width columns */
+  gap: 12px; /* Adds space between the items */
+}
+
+.item {
+  padding: 10px; /* Optional: Adds some padding inside each item */
+}
+
+
+
+@media (max-width: 768px) {
+  .filters-state {
+    /*margin: 20px;*/
+    display: flex;
+    justify-content: left;
+    /*gap: 10px;*/
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 30%;
+    outline: auto;
+    color: blanchedalmond;
+  }
+
+  .filters-city {
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 60%;
+    outline: auto;
+    color: blanchedalmond;
+  }
+
+  .filter-input {
+    font-size: 10px;
+    padding: 0.5px;
+  }
+
+  .filter-text {
+    font-size: 12px;
+  }
+  .row {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr 1fr; /* Create two equal-width columns */
+    gap: 8px; /* Adds space between the items */
+  }
+
+  .item {
+    padding: 6px; /* Optional: Adds some padding inside each item */
+  }
+}

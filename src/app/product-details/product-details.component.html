@@ -1,0 +1,240 @@
+<div class="product-details-background" *ngIf="product">
+  <div class="grid-container">
+    <!-- Profile Image of Product -->
+    <div class="">
+      <div *ngIf="product.productCategory?.category === 'Special Offers'" class="label discounted-label">
+        Special Offers
+      </div>
+      <div *ngIf="product.productCategory?.category === 'Scrap Market'" class="label scrap-label">
+        Scrap Market
+      </div>
+
+      <img class="product-image" src="../../assets/Images/{{product.productCategory?.subCategory}}/{{imageIndex}}.jpg">
+      <p style="font-size:10px">"This is a standard image for reference purposes only. Kindly do not consider this as the exact representation of the item."</p>
+    </div>
+
+    <!-- Details of Product -->
+    <div class="">
+      <div class="card-detail">
+        <div class="row">
+          <div class="col card-title-detail">
+            <div>{{product.title | titlecase}}</div>
+            <span class="card-text-detail" *ngIf="((product.quantity - cartOrderedQty.qty)>0)">Total Available Quantity : {{(product.quantity - cartOrderedQty.qty) | number:'1.0-0' }} {{product.uom}}</span>
+            <span class="card-text-detail" *ngIf="((product.quantity - cartOrderedQty.qty)<=0)">
+              Out of Stock
+            </span>
+          </div>
+          <div class="col">
+            <div class="row icon-position">
+              <span class="icon-column">
+                <div>
+                  <img src="assets/location.png" alt="Location Pin" class="location-icon">{{product.fromAddress}}, {{product.fromCity}}, {{product.fromState}}
+                </div>
+                <div>
+                  <img src="assets/mobile.jpg" alt="Contact No" class="location-icon">{{product.productContactNo}}
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body-detail">
+          <h5 class="card-text-detail text-dark">Description</h5>
+          <pre style="white-space: pre-wrap; text-align: justify;">{{ product.description }}</pre>
+        </div>
+        <div class="card-body-detail" *ngIf="product.productCategory?.category === 'Products' || product.productCategory?.category === 'Special Offers'">
+          <div class="row">
+            <div class="col-md-3 col-sm-6" *ngIf="product.grnNumber?.trim()">
+              <span class="text-dark"><u>GRN Number:</u> {{product.grnNumber}}</span>
+            </div>
+            <div class="col-md-3 col-sm-6" *ngIf="product.hsnCode?.trim()">
+              <span class="text-dark"><u>HSN Code:</u> {{product.hsnCode}}</span>
+            </div>
+            <div class="col-md-3 col-sm-6" *ngIf="product.materialType?.trim()">
+              <span class="text-dark"><u>Material Type:</u> {{product.materialType}}</span>
+            </div>
+            <div class="col-md-3 col-sm-6" *ngIf="product.grade?.trim()">
+              <span class="text-dark"><u>Grade:</u> {{product.grade}}</span>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-3 col-sm-6" *ngIf="product.size?.trim()">
+              <span class="text-dark"><u>Size:</u> {{product.size}}</span>
+            </div>
+            <div class="col-md-3 col-sm-6" *ngIf="product.shape?.trim()">
+              <span class="text-dark"><u>Shape:</u> {{product.shape}}</span>
+            </div>
+            <div class="col-md-3 col-sm-6" *ngIf="product.labTested?.trim()">
+              <span class="text-dark"><u>Lab Tested:</u> {{product.labTested}}</span>
+            </div>
+            <div class="col-md-3 col-sm-6" *ngIf="!lastQualityTestedFlag">
+              <span class="text-dark"><u>Last Quality Tested:</u> {{product.lastQualityTested | date: 'dd/MM/yyyy'}}</span>
+              <!--<span class="text-dark" *ngIf="lastQualityTestedFlag"><u>Last Quality Tested:</u> </span>-->
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-3 col-sm-6" *ngIf="product.length?.trim()">
+              <span class="text-dark"><u>Length:</u> {{product.length}}</span>
+            </div>
+            <div class="col-md-3 col-sm-6" *ngIf="product.manufacturerName?.trim()">
+              <span class="text-dark"><u>Manufacturer Name:</u> {{product.manufacturerName}}</span>
+            </div>
+            <div class="col-md-3 col-sm-6" *ngIf="!manufacturerDateFlag">
+              <span class="text-dark"><u>Manufacturing Date:</u> {{product.manufacturerDate | date: 'dd/MM/yyyy'}}</span>
+              <!--<span class="text-dark" *ngIf="manufacturerDateFlag"><u>Manufacturing Date:</u> </span>-->
+            </div>
+            <div class="col-md-3 col-sm-6" *ngIf="!expiryDateFlag">
+              <span class="text-dark"><u>Expiry Date:</u> {{product.expiryDate | date: 'dd/MM/yyyy'}}</span>
+              <!--<span class="text-dark" *ngIf="expiryDateFlag"><u>Expiry Date:</u> </span>-->
+            </div>
+          </div>
+        </div>
+        <div class="card-body-detail">
+          <div class=" row">
+            <div class="col" *ngIf="!buyFlag && !cartFlag">
+              <input type="number"
+                     min="0.00001"
+                     name="orderedQty"
+                     [(ngModel)]="product.orderedQty"
+                     placeholder="Enter Req Qty"
+                     (input)="onInput()"
+                     [ngClass]="{'is-invalid': qtyError}" />
+              <div *ngIf="qtyError" class="invalid-feedback">{{ qtyError }}</div>
+
+
+            </div>
+            <div class=" col" *ngIf="buyFlag">
+              <span class="text-dark fw-bold">Quantity : {{product.quantity| number:'1.0-0' }} {{product.uom}}</span>
+            </div>
+            <div class=" col">
+              <span class="text-dark fw-bold">Price : {{product.price| number:'1.0-0' }} Rs/{{product.uom}}  </span>
+              <div *ngIf="isBidPriceEnabled">
+                <input type="number" name="bidPrice" [(ngModel)]="product.bidPrice" placeholder="Enter Your Price" />
+              </div>
+              <!--</div>
+        <div class="col" *ngIf="!buyFlag && !cartFlag">-->
+              <button *ngIf="!buyFlag && !cartFlag" type="button" [disabled]="!utilityService.isLoggedIn()" class="bid-button" (click)="enableBidPrice()">
+                Negotiate Price
+                <span *ngIf="!utilityService.isLoggedIn()">(Login Required)</span>
+              </button>
+            </div>
+            <div class=" col" *ngIf="!buyFlag && !cartFlag">
+              <span class="text-dark fw-bold" *ngIf="!isBidPriceEnabled">Amount : Rs {{(product.price * product.orderedQty)| number:'1.0-0' }}</span>
+              <span class="text-dark fw-bold" *ngIf="isBidPriceEnabled">Amount : Rs {{(product.bidPrice * product.orderedQty)| number:'1.0-0' }}</span>
+            </div>
+            <div class=" col" *ngIf="buyFlag">
+              <span class="text-dark fw-bold">Amount : Rs {{(product.price * product.quantity)| number:'1.0-0' }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body-detail" *ngIf="!buyFlag && !cartFlag">
+          <div class="row">
+            <div class="col">
+              <textarea [(ngModel)]="product.toAddress"
+                        placeholder="Enter Address"
+                        (input)="onInput()"
+                        class="address-input"></textarea>
+              <div *ngIf="product.toAddress" class="invalid-feedback">Address is required.</div>
+              <!--<textarea type="text" name="toAddress" (input)="onInput()" [(ngModel)]="product.toAddress" placeholder="Enter Address" #toAddress="ngModel" class="address-input" id="toAddress"></textarea>-->
+            </div>
+            <div class="col">
+              <input type="number"
+                     name="toPinCode"
+                     [(ngModel)]="product.toPinCode"
+                     placeholder="Enter PIN Code"
+                     (input)="onInput()"
+                     [ngClass]="{'is-invalid': pinCodeError}" />
+              <div *ngIf="pinCodeError" class="invalid-feedback">{{ pinCodeError }}</div>
+
+            </div>
+            <div class="col">
+              <input type="text"
+                     maxlength="10"
+                     name="toMobileNo"
+                     [(ngModel)]="product.toMobileNo"
+                     placeholder="Enter Mobile No."
+                     (input)="onInput()"
+                     [ngClass]="{'is-invalid': mobileError}" />
+              <div *ngIf="mobileError" class="invalid-feedback">{{ mobileError }}</div>
+              <!--<input type="text" name="toMobileNo" (input)="onInput()" [(ngModel)]="product.toMobileNo" placeholder="Enter Mobile No.">-->
+            </div>
+          </div>
+        </div>
+
+        <div class="d-grid gap-2" *ngIf="!buyFlag && !cartFlag">
+          <button type="button" class="card-btn btn btn-outline-success" routerLink="/home" [disabled]="(!utilityService.isLoggedIn() || btnState)"
+                  (click)="this.utilityService.addToCart(product)">
+            Add to Cart
+            <span *ngIf="!utilityService.isLoggedIn()">(Login Required)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h5>Seller Details</h5>
+  <div class="card-body-detail">
+    <div class="row">
+      <div class="col-md-4 col-sm-6" *ngIf="sellerUser?.userOrganizationName?.trim()">
+        <span class="text-dark"><u>Company Name </u>: {{sellerUser?.userOrganizationName}}</span>
+      </div>
+      <div class="col-md-4 col-sm-6" *ngIf="sellerUser?.userOrganizationEmailId?.trim()">
+        <span class="text-dark"><u>Company Email Id </u>: {{sellerUser?.userOrganizationEmailId}}</span>
+      </div>
+      <div class="col-md-4 col-sm-6" *ngIf="sellerUser?.userOrganizationAddress?.trim()">
+        <span class="org-details-text text-dark"><u>Company Address </u>: {{sellerUser?.userOrganizationAddress}}</span>
+      </div>
+
+
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4 col-sm-6" *ngIf="sellerUser?.userGSTNo?.trim()">
+        <span class="text-dark"><u>GST No </u>: {{sellerUser?.userGSTNo}}</span>
+      </div>
+      <div class="col-md-4 col-sm-6" *ngIf="sellerUser?.userOrganizationNatureBusiness?.trim()">
+        <span class="org-details-text text-dark"><u>Nature of Business </u>: {{sellerUser?.userOrganizationNatureBusiness}}</span>
+      </div>
+      <div class="col-md-4 col-sm-6" *ngIf="sellerUser?.userOrganizationLegalStatus?.trim()">
+        <span class="text-dark"><u>Legal Status of Firm </u>: {{sellerUser?.userOrganizationLegalStatus}}</span>
+      </div>
+
+      <br />
+    </div>
+    <div class="row mt-4">
+      <div class="col col-sm" *ngIf="sellerUser?.userOrganizationDetails?.trim()">
+        <span class="org-details-text text-dark"  style="white-space: pre-wrap; text-align: justify;">{{sellerUser?.userOrganizationDetails}}</span>
+      </div>
+    </div>
+    <br />
+  </div>
+
+  <hr>
+  <!-- Review -->
+  <div class="row g-0 " *ngIf="!buyFlag && !cartFlag">
+    <h5>Post your Review</h5>
+    <textarea class="form-control" [formControl]="reviewControl"></textarea>
+    <button class="card-btn btn btn-primary mt-2" (click)="submitReview()" [disabled]="!utilityService.isLoggedIn()">
+      Submit
+      <span *ngIf="!utilityService.isLoggedIn()">(Login Required)</span>
+    </button>
+    <div class="mt-2">
+      <p *ngIf="showError" style="color:white">{{ reviewMsg }}</p>
+      <p *ngIf="reviewSaved" style="color:white">{{ reviewMsg }}</p>
+    </div>
+    <hr>
+    <h5 class="reviews-title">All Reviews</h5>
+
+    <ul *ngIf="reviews.length; else noReviews" class="reviews-list">
+      <li *ngFor="let review of reviews" class="review-item">
+        <strong class="review-user">Anonymous User </strong>:
+        <span class="review-content">{{ review.content }}</span><br />
+        <small class="review-date">{{ review.createdAt | date: 'mediumDate' }}</small>
+      </li>
+    </ul>
+
+    <ng-template #noReviews>
+      <p class="no-reviews">No reviews yet.</p>
+    </ng-template>
+  </div>
+</div>
+<!--</div>-->

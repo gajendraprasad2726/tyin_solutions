@@ -1,0 +1,17 @@
+<div class="card text-center">
+  <div class="overflow-hidden d-flex justify-content-center align-items-center">
+    <img src="../../assets/Images/{{product.productCategory?.subCategory}}/1.jpg" alt=""
+         class="card-img" OpenProductDetails [productId]="product.id" [buyFlag]="buyFlag">
+  </div>
+  <div class="card-body" OpenProductDetails [productId]="product.id" [buyFlag]="buyFlag">
+    <h5 class="card-title "> {{product.title}} </h5>
+    <p class="card-text" *ngIf="buyFlag"> -------------------------------- </p>
+    <p class="card-text" *ngIf="buyFlag && ((product.quantity - cartOrderedQty.qty) > 0)">{{(product.quantity - cartOrderedQty.qty) | number:'1.0-0' }} {{product.uom}}</p>
+    <p class="card-text" *ngIf="buyFlag && ((product.quantity - cartOrderedQty.qty) <= 0)"> Out of Stock </p>
+    <p class="card-text " *ngIf="buyFlag"> Rs {{product.price | number:'1.0-0' }} / {{product.uom}}</p>
+    <p class="card-text" *ngIf="buyFlag"><img src="assets/location.png" class="location-icon">{{product.fromCity}}, {{product.fromState}}</p>
+    <a [href]="'tel:' + product.productContactNo" class="phone-link" *ngIf="buyFlag"><img src="assets/mobile.jpg" class="location-icon">{{ product.productContactNo }}</a>
+  </div>
+</div>
+
+

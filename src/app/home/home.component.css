@@ -1,0 +1,28 @@
+.header-m1 {
+  background-color: aliceblue;
+}
+
+.row {
+  display: grid; /* Use grid layout */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* Create two equal-width columns */
+  gap: 12px; /* Adds space between the items */
+}
+
+.item {
+  padding: 10px; /* Optional: Adds some padding inside each item */
+}
+
+@media (max-width: 768px) {
+  .row {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr 1fr; /* Create two equal-width columns */
+    gap: 8px; /* Adds space between the items */
+  }
+
+  .item {
+    padding: 6px; /* Optional: Adds some padding inside each item */
+  }
+}
+
+
+

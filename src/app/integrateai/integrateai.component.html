@@ -1,0 +1,20 @@
+<div class="glow-heading">
+  Integrate AI at your Organization.
+  <button class="btn-post-req" routerLink="/post-ai-req">Enquiry</button>
+</div>
+<div class="quotations-container">
+  <div *ngFor="let quotation of quotations" class="quotation-card">
+    <h3>{{ quotation.title }}</h3>
+    <p>{{ quotation.description }}</p>
+    <p><strong>Status:</strong> <span [ngClass]="{'status-available': quotation.status === 'Available', 'status-wip': quotation.status === 'Work in Progress', 'status-coming-soon': quotation.status === 'Coming Soon'}">{{ quotation.status }}</span></p>
+    <button (click)="viewQuotation(quotation.title)" class="btn btn-primary">{{ quotation.buttonText }}</button>
+    <!-- Download button -->
+    <button (click)="downloadPPT(quotation.title)" class="btn btn-success" style="margin-left:10px;">
+      Download
+    </button>
+  </div>
+</div>
+<!-- Toast notification container -->
+<div class="toast-message" *ngIf="toastVisible">
+  {{ toastMessage }}
+</div>

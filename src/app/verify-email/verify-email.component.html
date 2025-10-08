@@ -1,0 +1,5 @@
+<div class="verify-container">
+  <div *ngIf="message" [ngClass]="{'success': verified, 'fail': !verified}" class="message-box">
+    {{ message }}
+  </div>
+</div>

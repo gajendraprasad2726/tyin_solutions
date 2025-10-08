@@ -1,0 +1,177 @@
+.header-m1 {
+  background-color: aliceblue;
+}
+
+.acc-btn {
+  width: stretch;
+  height: 30px;
+  padding: 0px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1px;
+  background-color: #106b5a;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.org-details-text {
+  word-break: break-word; /* breaks long words */
+  white-space: normal; /* allows wrapping */
+  max-width: 100%; /* prevent overflow */
+  overflow-wrap: anywhere; /* ensures very long strings break */
+}
+.card-btn {
+  width: stretch;
+  border: none;
+  border-radius: 1px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.acc-input {
+  width: 100%;
+  padding: 2px;
+  width: none; /* Adjust the width */
+  height: 30px; /* Adjust the height */
+  margin-bottom: 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  transition: border-color 0.3s ease;
+}
+
+/* table.component.css */
+.styled-table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 15px;
+  text-align: left;
+}
+
+  .styled-table th,
+  .styled-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+
+  .styled-table th {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  .styled-table tr:nth-child(odd) {
+    background-color: #343114;
+  }
+
+  .styled-table tr:nth-child(even) {
+    background-color: #493b19;
+  }
+
+  .styled-table tr:hover {
+    background-color: maroon;
+  }
+
+  .styled-table td {
+  /*  text-align: center;*/
+  }
+
+.first-column {
+  width: 260px; /* default for desktop */
+  font-size: 0.875rem; /* Bootstrap fs-7 fallback */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.expandable-container {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #007bff;
+}
+
+  button:hover {
+    text-decoration: underline;
+  }
+
+.expandable-content {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+}
+
+.row {
+  display: grid; /* Use grid layout */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* Create two equal-width columns */
+  gap: 12px; /* Adds space between the items */
+}
+
+.item {
+  padding: 10px; /* Optional: Adds some padding inside each item */
+  /*border: 1px solid #ccc;*/ /* Optional: Adds a border for visual distinction */
+}
+
+
+/* Responsive design */
+@media (max-width: 786px) {
+  .acc-btn, .card-btn {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .acc-input {
+    font-size: 0.7rem;
+  }
+
+  .styled-table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+    .styled-table th, .styled-table td {
+      padding: 8px;
+    }
+
+  button {
+    font-size: 16px;
+  }
+
+  .expandable-container {
+    padding: 8px;
+  }
+
+  .expandable-content {
+    padding: 8px;
+  }
+
+  .first-column {
+    width: auto;
+    font-size: 0.8rem;
+    white-space: normal;
+  }
+}
+
+
+@media (max-width: 786px) {
+  .row {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr 1fr; /* Create two equal-width columns */
+    gap: 8px; /* Adds space between the items */
+  }
+
+  .item {
+    padding: 6px; /* Optional: Adds some padding inside each item */
+  }
+}

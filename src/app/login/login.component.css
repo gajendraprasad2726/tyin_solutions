@@ -1,0 +1,262 @@
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  color: #140f0f;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  /*padding: 12px;*/
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+  .form-control:focus {
+    border-color: #ff6ec7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 110, 199, 0.5);
+  }
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #609d8d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+  .submit-btn:disabled {
+    background-color: #ddd;
+  }
+
+  .submit-btn:hover:enabled {
+    background-color: #ff9a8b;
+  }
+
+
+.success-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #28a745; /* Green background for success */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  max-width: 350px;
+  animation: fadeIn 1s ease-out;
+  z-index: 9999; /* Ensure it appears above other elements */
+}
+
+/* Success Icon Styling */
+.message-icon {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+/* Success Text Styling */
+.message-text {
+  flex: 1;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fail-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e13333; /* Green background for success */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  max-width: 350px;
+  animation: fadeIn 1s ease-out;
+  z-index: 9999; /* Ensure it appears above other elements */
+}
+
+a {
+  color: blue !important; /* Force the color to be blue */
+  text-decoration: underline !important; /* Force underline */
+  cursor: pointer;
+}
+
+.forgotPassword {
+  color: blue;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.forgotPasswordText {
+  color: maroon;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.login-popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.login-popup-content {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-popup-header {
+  background-color: #21222c;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+}
+
+.login-popup-header h4 {
+  /*margin: 0;*/
+
+}
+
+  .login-popup-header .close-btn {
+
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+  }
+
+.login-popup-body {
+  margin: 30px 0;
+}
+
+.login-popup-footer {
+  margin-top: 10px;
+}
+
+  .login-popup-footer button {
+    width: 100%;
+  }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .login-popup-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .success-message, .fail-message {
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .message-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .message-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-popup-content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .success-message, .fail-message {
+    top: 5px;
+    right: 5px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .message-icon {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  .message-text {
+    font-size: 12px;
+  }
+}

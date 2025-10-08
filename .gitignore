@@ -1,0 +1,11 @@
+# Node modules folder
+node_modules/
+
+# Angular cache folder
+.angular/cache/
+
+# Build output
+dist/
+
+# Environment files
+.env

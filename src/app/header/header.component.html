@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home">TYIn</a>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown" *ngFor="let item of navigationList; let i = index" [ngClass]="{
+    'category-products': (item.category | titlecase) === 'Products',
+    'category-discounted': (item.category | titlecase) === 'Special Offers',
+    'category-scrap': (item.category | titlecase) === 'Scrap Market'
+  }">
+        <a class="nav-link dropdown-toggle"
+           href="#"
+           id="navbarDropdown{{i}}"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+          {{
+        (item.category | titlecase) === 'Products' ? 'Products' :
+        (item.category | titlecase) === 'Special Offers' ? 'Special Offers' :
+        (item.category | titlecase) === 'Scrap Market' ? 'Scrap Market' :
+        item.category
+          }}
+        </a>
+
+        <ul class="dropdown-menu" [attr.aria-labelledby]="'navbarDropdown' + i">
+          <li *ngFor="let subcategory of item.subcategories" style="cursor:pointer;">
+            <a class="dropdown-item"
+               OpenProducts
+               [category]="{id: 0, category: item.category, subCategory: subcategory}">
+              {{subcategory | titlecase}}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+
+    <div class="btn-group" role="group">
+      <button type="button" class=" btn start-sell btn-light" style="color:black" routerLink="/uploadmaterial" (click)="onStartSellingClick()">
+        Start Selling
+      </button>
+    </div>
+    <div class="btn-group btn-group-sm me-2" role="group">
+      <button type="button" class="btn  btn-xs " (click)="loginComp()" *ngIf="!utilityService.isLoggedIn()">
+        Login
+      </button>
+      <button type="button" class="btn  btn-xs " (click)="registerComp()" *ngIf="!utilityService.isLoggedIn()">
+        Register
+      </button>
+      <button type="button" class="btn  btn-xs " *ngIf="utilityService.isLoggedIn()"
+              routerLink="/account">
+        Account
+      </button>
+      <button type="button" class="btn  btn-xs " routerLink="/cart" *ngIf="utilityService.isLoggedIn()">
+        Cart
+      </button>
+
+      <button type="button" class="btn  btn-xs " (click)="utilityService.logoutUser()"
+              *ngIf="utilityService.isLoggedIn()" routerLink="/home">
+        Logout
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="search-container">
+    <input class="search-input" [(ngModel)]="searchQuery" appOpenSearchedProducts [searchQuery]="searchQuery" (enterPressed)="onSearch($event)" type="text" placeholder="Search for products" />
+    <button class="search-btn" appOpenSearchedProducts [searchQuery]="searchQuery"> Search</button>
+    <div *ngIf="isLoading">Loading...</div>
+    <a class="blinking-link" routerLink="/integrate-ai">TYIn - AI</a>
+</div>
+

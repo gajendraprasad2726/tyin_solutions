@@ -1,0 +1,178 @@
+
+
+/* === GENERAL PAGE STYLES === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+  color: #f0f0f0;
+}
+
+/* === GLOW HEADING === */
+.glow-heading {
+  font-family: 'Times New Roman', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #1de9b6; /* Teal-ish color */
+  text-align: left;
+  position: relative;
+  padding: 20px 30px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #1de9b6, 0 0 20px #1de9b6, 0 0 40px #1de9b6;
+  transition: box-shadow 0.3s ease-in-out;
+  user-select: none;
+  animation: pulseGlow 3s infinite ease-in-out;
+  display: flex;
+  justify-content: space-between; /* Push items to edges */
+  align-items: center; /* Vertically center items */
+  gap: 15px; /* Small gap */
+  white-space: nowrap; /* prevent wrapping on desktop */
+}
+
+/* Glow pulse animation (teal version) */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px #1de9b6, 0 0 20px #1de9b6, 0 0 40px #1de9b6;
+  }
+
+  50% {
+    box-shadow: 0 0 12px #69f0ae, 0 0 30px #69f0ae, 0 0 60px #69f0ae;
+  }
+}
+
+/* === ENQUIRY BUTTON === */
+.btn-post-req {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-size: 1.1rem;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+  flex-shrink: 0; /* prevent shrinking */
+  white-space: nowrap;
+}
+
+  .btn-post-req:hover {
+    background-color: #ff8585;
+    color: #000;
+  }
+
+/* === QUOTATIONS CONTAINER === */
+.quotations-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  background-color: #1a1a1a;
+}
+
+/* === QUOTATION CARD === */
+.quotation-card {
+  background: #ffffff;
+  color: #000000;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+  .quotation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .quotation-card h3 {
+    font-size: 1.1rem;
+    color: #2c2c2c;
+    margin-bottom: 10px;
+  }
+
+  .quotation-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  /* === VIEW QUOTATION BUTTON === */
+  .quotation-card button {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    background-color: #2a1919;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+    .quotation-card button:hover {
+      background-color: maroon;
+    }
+
+.toast-message {
+  position: fixed;
+  top: 60px;
+  left: 50%; /* Move the left edge to the center of the viewport */
+  transform: translateX(-50%); /* Shift the element left by 50% of its own width */
+  background-color: maroon;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  user-select: none;
+}
+
+
+.status-available {
+  color: green;
+  font-weight: 600;
+}
+
+.status-wip {
+  color: orange;
+  font-weight: 600;
+}
+
+.status-coming-soon {
+  color: gray;
+  font-weight: 600;
+  font-style: italic;
+}
+/* === MEDIA QUERIES === */
+
+
+@media (max-width: 786px) {
+  .glow-heading {
+    font-size: 0.8rem;
+    padding: 5px 5px;
+    border-radius: 5px;
+    gap: 0px;
+    font-weight: 600;
+  }
+
+  .btn-post-req {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+
+  .quotation-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .quotation-card p {
+    font-size: 0.75rem;
+  }
+
+  .quotation-card button {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+}

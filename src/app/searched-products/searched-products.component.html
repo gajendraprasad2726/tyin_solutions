@@ -1,0 +1,54 @@
+<div class="product-background">
+  <div class="search-results">
+    <div class="my-container mx-auto">
+
+      <!-- Filters -->
+      <div class="filters-state">
+        <span class="filter-text">
+          Filter | State :
+          <select [(ngModel)]="searchText1" class="filter-input">
+            <option value="">-- Select State --</option>
+            <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+          </select>
+        </span>
+      </div>
+
+      <div class="filters-city">
+        <span class="filter-text">
+          City :
+          <input type="text"
+                 [(ngModel)]="searchText2"
+                 placeholder="Enter City"
+                 class="filter-input" />
+        </span>
+      </div>
+
+      <!-- Loader -->
+      <div *ngIf="loading" class="text-center my-3">
+        <p>Loading products...</p>
+      </div>
+
+      <!-- Grid View -->
+      <div class="header-m1 p-2 border my-rounded-corner" *ngIf="view === 'grid' && !loading">
+        <div class="row">
+          <div class="item" *ngFor="let product of getFilteredProducts()">
+            <app-product [product]="product"></app-product>
+          </div>
+          <div *ngIf="getFilteredProducts().length === 0 && searchQuery">
+            <p style="color:azure; font-size:smaller;">No products found for "{{ searchQuery }}"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- List View -->
+      <div class="list-view" *ngIf="view === 'list' && !loading">
+        <div class="row mb-5" *ngFor="let product of getFilteredProducts()">
+          <div class="col">
+            <app-product [view]="'list'" [product]="product"></app-product>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

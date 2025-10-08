@@ -1,0 +1,302 @@
+/* Slogan Section */
+.slogan {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Animated Slogan */
+.animated-slogan {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #a0ea8e;
+  letter-spacing: 2px;
+  animation: fadeInOut 4s infinite;
+  margin: 0;
+  padding: 20px;
+  /*text-transform: uppercase;*/
+  display: inline-block;
+  position: relative;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.about-us-container {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  /*background-color: #f4f4f4;*/
+  background-color: #343114;
+  min-height:50vh;
+  color:white;
+}
+.about-us-content {
+  font-size: 0.8em;
+  color: white;
+}
+p {
+  margin-bottom: 25px; /* Adjust the value to your desired gap */
+}
+
+h5 {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.company-details, .team, .contact {
+  margin-bottom: 50px;
+}
+
+  .company-details p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color:white;
+  }
+
+.team {
+  text-align: center;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  width: 200px;
+  text-align: center;
+}
+
+  .team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .team-member h3 {
+    font-size: 1.3em;
+    color: #34495e;
+  }
+
+  .team-member p {
+    color: #7f8c8d;
+  }
+
+.contact-button {
+  padding: 12px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+  .contact-button:hover {
+    background-color: #c0392b;
+  }
+
+
+/* Navbar container */
+.navbar {
+  background-color: #34495e;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation list styling */
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual nav items */
+.nav-item {
+  margin: 0 15px;
+}
+
+/* Navigation links */
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 0.75em;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+  /* Hover effects */
+  .nav-link:hover {
+    color: #1abc9c;
+    transform: scale(1.1);
+  }
+
+  /* Active link (optional) */
+  .nav-link.active {
+    color: #1abc9c;
+  }
+
+  /* Styling the container */
+  .list-container {
+    max-width: 800px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    /*font-family: 'Arial', sans-serif;*/ /* Use a clean font */
+    font-size: 0.9em;
+  }
+
+  /* Styling the unordered list */
+  ul.feature-list {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0; /* Remove padding */
+    /*font-size: 0.9em;*/
+  }
+
+  /* Styling individual list items */
+  li.feature-item {
+    background-color: #f9f9f9; /* Light background for each item */
+    padding: 20px; /* Add padding inside each list item */
+    margin-bottom: 20px; /* Space between list items */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    /*font-size:0.9em;*/
+  }
+
+    /* Hover effect for list items */
+    li.feature-item:hover {
+      background-color: #e2e2e2; /* Change background color on hover */
+      transform: translateY(-5px); /* Lift the item on hover */
+    }
+
+  /* Styling the title inside list items */
+  .title {
+    font-size: 1em; /* Larger font size for the title */
+    color: #333; /* Dark color for the title */
+    margin-bottom: 10px; /* Space below the title */
+    /*font-weight: bold;*/ /* Bold text for the title */
+  }
+
+  /* Styling the description text inside list items */
+  p.description {
+    font-size: 0.9em; /* Normal font size for description */
+    color: #666; /* Lighter color for the description */
+    line-height: 1.5; /* Space out lines in the description */
+    margin-top: 0; /* No top margin */
+  }
+
+
+
+ /*Styling the image*/ 
+img.founder-photo {
+  width: 200px;  /*Set width of the image */
+  height: auto;  /*Maintain aspect ratio */
+  border-radius: 10px;  /*Optional: rounded corners for the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);/*  Optional: add shadow to the image */
+  margin-left:30%;
+  margin-top:5%;
+}
+
+
+.founder-name {
+  margin-left: 30%;
+}
+
+.founder-vision{
+    /*margin-right:25%;*/
+    text-align:justify;
+    color: white;
+    font-size: 0.9em;
+}
+
+.cofounder-vision{
+    margin: 10%;
+    text-align: justify;
+    color: white;
+}
+
+/* Optional: Make the image a bit more stylish */
+img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow to the image */
+  border-radius: 10px; /* Optional: rounded corners for the image */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .animated-slogan {
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  .about-us-container {
+    padding: 10px;
+  }
+
+  .team-members {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .team-member {
+    width: 100%;
+  }
+
+  img.founder-photo {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .founder-name, .founder-vision {
+    margin: 0;
+    text-align: justify;
+  }
+
+  .nav-list {
+    /*flex-direction: column;*/
+    margin-right: 10px;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+    margin-right: 20px;
+  }
+
+  .list-container {
+    padding: 10px;
+  }
+
+  li.feature-item {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
+
+  p.description {
+    font-size: 1em;
+  }
+}

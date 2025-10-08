@@ -1,0 +1,151 @@
+/*.header-m1 {
+  background-color: aliceblue;
+  border-radius: 8px;
+}*/
+
+/* Container for the complaints section */
+.complaint-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  color: #333;
+}
+
+h5{
+    text-align: center;
+}
+
+header{
+    font-size: 16px;
+}
+
+/* Styling for the form inputs */
+.complaint-form input,
+.complaint-form textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+}
+
+  /* Focus effect on form inputs */
+  .complaint-form input:focus,
+  .complaint-form textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.2);
+  }
+
+/* Submit button styling */
+.complaint-form button {
+  background-color: black;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+}
+
+  .complaint-form button:hover {
+    background-color: maroon;
+  }
+
+/* Styling for error message */
+.message {
+  color: floralwhite;
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+
+/* Each review card styling */
+.review-card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: black;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow-y:auto;
+  font-size: 12px;
+}
+
+  .review-card .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .review-card .review-body {
+    margin-bottom: 8px;
+  }
+
+    .review-card .review-body p {
+      font-size: 10px;
+      color: #555;
+      display:flex;
+      flex-direction:column;
+      word-wrap:break-word;
+    }
+
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
+  .complaint-container {
+    width: 100%;
+    margin: 0px;
+    max-width: stretch;
+  }
+
+  .complaint-form button {
+    font-size: 16px;
+  }
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
+  .reviews-container {
+    padding: 10px;
+  }
+
+    .reviews-container h5 {
+      font-size: 16px;
+    }
+
+  .review-card {
+    padding: 10px;
+  }
+
+    .review-card .review-header .reviewer-name {
+      font-size: 14px;
+    }
+
+    .review-card .review-header .review-date {
+      font-size: 10px;
+    }
+
+    .review-card .review-body p {
+      font-size: 12px;
+    }
+
+    .review-card .review-footer .rating span {
+      font-size: 14px;
+    }
+
+  .no-reviews-message {
+    font-size: 14px;
+  }
+}

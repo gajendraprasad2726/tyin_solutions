@@ -1,0 +1,278 @@
+<div class="upload-background">
+  <div>
+    <h1 class="centered-heading">
+      Upload Your Product here
+      <button type="button" class="btn-close" (click)="onClose()"></button>
+    </h1>
+  </div>
+  <form [formGroup]="productForm" (ngSubmit)="upload()">
+    <div class="row form-container">
+      <div class="col">
+        <label for="categoryId" class="form-label">Category <span class="text-danger">*</span></label>
+        <select class="form-input" name="categoryId" id="categoryId" formControlName="categoryId">
+          <option *ngFor="let item of navigationList" [value]="item.category">{{item.category | titlecase}}</option>
+        </select>
+        <div class="form-error" *ngIf="CategoryId.errors?.['required'] && (CategoryId.dirty || CategoryId.touched)">
+          Category is Required
+        </div>
+      </div>
+      <div class="col">
+        <label for="productCategoryId" class="form-label">Product Type <span class="text-danger">*</span></label>
+        <select class="form-input" name="productCategoryId" id="productCategoryId" formControlName="productCategoryId">
+          <option value=1 *ngIf="selectedCategory === 'Products'">Apparel & Fashion</option>
+          <option value=2 *ngIf="selectedCategory === 'Products'">Home & Kitchen</option>
+          <option value=3 *ngIf="selectedCategory === 'Products'">Sports & Bags</option>
+          <option value=4 *ngIf="selectedCategory === 'Products'">Gifts & Toys</option>
+          <option value=5 *ngIf="selectedCategory === 'Products'">Furniture</option>
+          <option value=6 *ngIf="selectedCategory === 'Products'">Plastics & Products</option>
+          <option value=7 *ngIf="selectedCategory === 'Products'">Chemicals</option>
+          <option value=8 *ngIf="selectedCategory === 'Products'">Construction & Real Estate</option>
+          <option value=9 *ngIf="selectedCategory === 'Products'">Equipments & Machinary</option>
+          <option value=10 *ngIf="selectedCategory === 'Products'">Books & Stationary</option>
+          <option value=11 *ngIf="selectedCategory === 'Products'">Automobile</option>
+          <option value=12 *ngIf="selectedCategory === 'Products'">Industrial Supplies</option>
+          <option value=13 *ngIf="selectedCategory === 'Products'">Packaging & Paper</option>
+          <option value=14 *ngIf="selectedCategory === 'Products'">Other</option>
+          <option value=15 *ngIf="selectedCategory === 'Special Offers'">Apparel & Fashion</option>
+          <option value=16 *ngIf="selectedCategory === 'Special Offers'">Home & Kitchen</option>
+          <option value=17 *ngIf="selectedCategory === 'Special Offers'">Sports & Bags</option>
+          <option value=18 *ngIf="selectedCategory === 'Special Offers'">Gifts & Toys</option>
+          <option value=19 *ngIf="selectedCategory === 'Special Offers'">Furniture</option>
+          <option value=20 *ngIf="selectedCategory === 'Special Offers'">Plastics & Products</option>
+          <option value=21 *ngIf="selectedCategory === 'Special Offers'">Chemicals</option>
+          <option value=22 *ngIf="selectedCategory === 'Special Offers'">Construction & Real Estate </option>
+          <option value=23 *ngIf="selectedCategory === 'Special Offers'">Equipments & Machinary</option>
+          <option value=24 *ngIf="selectedCategory === 'Special Offers'">Books & Stationary</option>
+          <option value=25 *ngIf="selectedCategory === 'Special Offers'">Automotive Parts</option>
+          <option value=26 *ngIf="selectedCategory === 'Special Offers'">Industrial Supplies</option>
+          <option value=27 *ngIf="selectedCategory === 'Special Offers'">Packaging & Paper</option>
+          <option value=28 *ngIf="selectedCategory === 'Special Offers'">Other</option>
+          <option value=29 *ngIf="selectedCategory === 'Scrap Market'">Plastic</option>
+          <option value=30 *ngIf="selectedCategory === 'Scrap Market'">Wooden</option>
+          <option value=31 *ngIf="selectedCategory === 'Scrap Market'">Construction</option>
+          <option value=32 *ngIf="selectedCategory === 'Scrap Market'">Biomedical</option>
+          <option value=33 *ngIf="selectedCategory === 'Scrap Market'">Electronic</option>
+          <option value=34 *ngIf="selectedCategory === 'Scrap Market'">Hazardous</option>
+          <option value=35 *ngIf="selectedCategory === 'Scrap Market'">Battery</option>
+          <option value=36 *ngIf="selectedCategory === 'Scrap Market'">Domestic</option>
+          <option value=37 *ngIf="selectedCategory === 'Scrap Market'">Agriculture</option>
+          <option value=38 *ngIf="selectedCategory === 'Scrap Market'">Other</option>
+        </select>
+        <div class="form-error" *ngIf="ProductCategoryId.errors?.['required'] && (ProductCategoryId.dirty || ProductCategoryId.touched)">
+          Product Type is Required
+        </div>
+      </div>
+
+    </div>
+    <div class="row form-container">
+      <div class="col-3">
+        <label for="title" class="form-label">Title <span class="text-danger">*</span> </label>
+        <input type="text" class="form-input" id="title" formControlName="title">
+        <div class="form-error" *ngIf="Title.errors?.['required'] && (Title.dirty || Title.touched)">
+          Product Title is Required
+        </div>
+      </div>
+      <div class="col-2">
+        <label for="uom" class="form-label">UOM <span class="text-danger">*</span></label>
+        <select class="form-input" name="uom" id="uom" formControlName="uom">
+          <option value="MT">MT</option>
+          <option value="No">No</option>
+          <option value="Quintal">Quintal</option>
+          <option value="Litre">Litre</option>
+          <option value="Kg">Kg</option>
+          <option value="Other">Other</option>
+        </select>
+        <div class="form-error" *ngIf="UOM.errors?.['required'] && (UOM.dirty || UOM.touched)">
+          UOM is Required
+        </div>
+      </div>
+      <div class="col-2">
+        <label for="quantity" class="form-label">Qty <span class="text-danger">*</span></label>
+        <input type="number" class="form-input" id="quantity" formControlName="quantity">
+        <div class="form-error" *ngIf="Quantity.errors?.['required'] && (Quantity.dirty || Quantity.touched)">
+          Quantity is Required
+        </div>
+      </div>
+      <div class="col-2">
+        <label for="price" class="form-label">Price <span class="text-danger">*</span></label>
+        <input type="number" class="form-input" id="price" formControlName="price" >
+        <div class="form-error" *ngIf="Price.errors?.['required'] && (Price.dirty || Price.touched)">
+          Price is Required
+        </div>
+      </div>
+      <div class="col-3">
+        <label for="totalAmount" class="form-label">Amount</label>
+        <textarea type="number" class="form-amt-input" id="totalAmount" [value]="totalAmount" formControlName="totalAmount">{{totalAmount}}</textarea>
+      </div>
+    </div>
+    <div class="row form-container">
+      <div class="col-7">
+        <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
+        <textarea type="text" class="form-desc-input" id="description" formControlName="description"></textarea>
+        <div class="form-error"
+             *ngIf="Description.errors?.['required'] && (Description.dirty || Description.touched)">
+          Description is Required
+        </div>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-4">
+        <div class="row">
+          <div class="col-12 ">
+            <label for="productContactNo" class="form-label">Contact No <span class="text-danger">*</span></label>
+            <div class="input-container">
+              <span class="input-prefix">+91 </span>
+              <input type="text" class="form-input" id="productContactNo" formControlName="productContactNo">
+            </div>
+            <div class="form-error"
+                 *ngIf="ProductContactNo.errors?.['required'] && (ProductContactNo.dirty || ProductContactNo.touched)">
+              Contact No is Required
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 ">
+            <label for="fromAddress" class="form-label">Location of Stock (Address) <span class="text-danger">*</span></label>
+            <textarea type="text" class="form-loc-input" id="fromAddress" formControlName="fromAddress"></textarea>
+            <div class="form-error"
+                 *ngIf="FromAddress.errors?.['required'] && (FromAddress.dirty || FromAddress.touched)">
+              Address is Required
+            </div>
+          </div>
+        </div>
+        <div class="row">
+         <div class="col-12 col-md-4">
+           <label for="fromCity" class="form-label">City <span class="text-danger">*</span></label>
+           <input type="text" class="form-input" id="fromCity" formControlName="fromCity">
+           <div class="form-error"
+                *ngIf="FromCity.errors?.['required'] && (FromCity.dirty || FromCity.touched)">
+             City is Required
+           </div>
+         </div>
+         <div class="col-12 col-md-4">
+           <label for="fromState" class="form-label">State <span class="text-danger">*</span></label>
+           <select class="form-input" name="fromState" id="fromState" formControlName="fromState">
+             <option value="Andaman and Nicobar Islands">Andaman & Nicobar Islands</option>
+             <option value="Andhra Pradesh">Andhra Pradesh</option>
+             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+             <option value="Assam">Assam</option>
+             <option value="Bihar">Bihar</option>
+             <option value="Chandigarh">Chandigarh</option>
+             <option value="Chhattisgarh">Chhattisgarh</option>
+             <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+             <option value="Daman and Diu">Daman and Diu</option>
+             <option value="Delhi">Delhi</option>
+             <option value="Goa">Goa</option>
+             <option value="Gujarat">Gujarat</option>
+             <option value="Haryana">Haryana</option>
+             <option value="Himachal Pradesh">Himachal Pradesh</option>
+             <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+             <option value="Jharkhand">Jharkhand</option>
+             <option value="Karnataka">Karnataka</option>
+             <option value="Kerala">Kerala</option>
+             <option value="Ladakh">Ladakh</option>
+             <option value="Lakshadweep">Lakshadweep</option>
+             <option value="Madhya Pradesh">Madhya Pradesh</option>
+             <option value="Maharashtra">Maharashtra</option>
+             <option value="Manipur">Manipur</option>
+             <option value="Meghalaya">Meghalaya</option>
+             <option value="Mizoram">Mizoram</option>
+             <option value="Nagaland">Nagaland</option>
+             <option value="Odisha">Odisha</option>
+             <option value="Puducherry">Puducherry</option>
+             <option value="Punjab">Punjab</option>
+             <option value="Rajasthan">Rajasthan</option>
+             <option value="Sikkim">Sikkim</option>
+             <option value="Tamil Nadu">Tamil Nadu</option>
+             <option value="Telangana">Telangana</option>
+             <option value="Tripura">Tripura</option>
+             <option value="Uttar Pradesh">Uttar Pradesh</option>
+             <option value="Uttarakhand">Uttarakhand</option>
+             <option value="West Bengal">West Bengal</option>
+           </select>
+           <div class="form-error"
+                *ngIf="FromState.errors?.['required'] && (FromState.dirty || FromState.touched)">
+             State is Required
+           </div>
+         </div>
+         <div class="col-12 col-md-4">
+           <label for="fromPinCode" class="form-label">PIN Code <span class="text-danger">*</span></label>
+           <input type="number" class="form-input" id="fromPinCode" formControlName="fromPinCode" />
+           <div class="form-error"
+                *ngIf="productForm.get('fromPinCode')?.invalid && (FromPinCode.dirty || FromPinCode.touched)">
+             Please enter a valid 6-digit number.
+           </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    <div class="row form-container" *ngIf="selectedCategory === 'Products' || selectedCategory === 'Special Offers'">
+      <div class="row">
+        <div class="col-3">
+          <label for="grnNumber" class="form-label">GRN No</label>
+          <input type="text" class="form-input" id="grnNumber" formControlName="grnNumber">
+        </div>
+        <div class="col-3">
+          <label for="hsnCode" class="form-label">HSN Code</label>
+          <input type="text" class="form-input" id="hsnCode" formControlName="hsnCode">
+        </div>
+        <div class="col-3">
+          <label for="materialType" class="form-label">Material Type</label>
+          <input type="text" class="form-input" id="materialType" formControlName="materialType">
+        </div>
+        <div class="col-3">
+          <label for="grade" class="form-label">Grade</label>
+          <input type="text" class="form-input" id="grade" formControlName="grade">
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <label for="shape" class="form-label">Shape</label>
+          <input type="text" class="form-input" id="shape" formControlName="shape">
+        </div>
+        <div class="col-3">
+          <label for="size" class="form-label">Size</label>
+          <input type="text" class="form-input" id="size" formControlName="size">
+        </div>
+        <div class="col-3">
+          <label for="labTested" class="form-label">Lab Tested</label>
+          <select class="form-input" name="labTested" id="labTested" formControlName="labTested">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div class="col-3">
+          <label for="lastQualityTested" class="form-label">Last Quality Tested</label>
+          <input type="date" class="form-input" id="lastQualityTested" formControlName="lastQualityTested" [attr.max]="currentDate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <label for="length" class="form-label">Length</label>
+          <input type="text" class="form-input" id="length" formControlName="length">
+        </div>
+        <div class="col">
+          <label for="manufacturerName" class="form-label">Manufacturer Name</label>
+          <input type="text" class="form-input" id="manufacturerName" formControlName="manufacturerName">
+        </div>
+        <div class="col-3">
+          <label for="manufacturerDate" class="form-label">Manufacturing Date</label>
+          <input type="date" class="form-input" id="manufacturerDate" formControlName="manufacturerDate" [attr.max]="currentDate">
+        </div>
+        <div class="col-3">
+          <label for="expiryDate" class="form-label">Expiry Date</label>
+          <input type="date" class="form-input" id="expiryDate" formControlName="expiryDate" [attr.min]="currentDate">
+        </div>
+      </div>
+    </div>
+    <div class="row form-container">
+      <div class=" ">
+        <button type="submit" class="form-btn" [disabled]=" (!utilityService.isLoggedIn())">
+          Upload Product
+          <span *ngIf="!utilityService.isLoggedIn()">(Login First)</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+

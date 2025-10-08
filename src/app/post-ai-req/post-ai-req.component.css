@@ -1,0 +1,155 @@
+small {
+  color: red;
+  font-size: 12px;
+}
+
+/* Overlay & Centered Popup */
+.login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.login-popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Popup box */
+.login-popup-content {
+  background-color: #121212; /* dark but soft black */
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 480px;
+  max-width: 95vw;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  color: #eee;
+  position: relative;
+  text-align: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+  /* Header text */
+  .login-popup-content > div:first-child {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1de9b6; /* teal accent */
+    text-align: center;
+  }
+
+/* Input & textarea container */
+.mobile-input {
+  margin-bottom: 18px;
+}
+
+/* Inputs and textarea styling */
+input.form-control,
+textarea.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #eee;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+  input.form-control::placeholder,
+  textarea.form-control::placeholder {
+    color: #888;
+  }
+
+  /* Input focus */
+  input.form-control:focus,
+  textarea.form-control:focus {
+    border-color: #1de9b6;
+    outline: none;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #1de9b6;
+  color: #121212;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(29, 233, 182, 0.5);
+}
+
+  .submit-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  .submit-btn:hover:enabled {
+    background-color: #14b38a;
+    box-shadow: 0 6px 14px rgba(20, 179, 138, 0.7);
+  }
+
+/* Quotation message */
+.quotation-msg {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a1f0d1;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+/* Error messages */
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  text-align: left;
+}
+
+
+@media (max-width: 768px) {
+  .login-popup-content {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  input.form-control,
+  textarea.form-control {
+    font-size: 0.85rem;
+  }
+
+  .submit-btn {
+    font-size: 0.85rem;
+    padding: 10px 0;
+  }
+
+  .error-message {
+    font-size: 0.75rem;
+  }
+}

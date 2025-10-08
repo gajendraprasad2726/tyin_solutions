@@ -94,7 +94,7 @@ export class UtilityService {
     let toMobileNo = product.toMobileNo;
     let bidPrice = product.bidPrice ? product.bidPrice : 0;
 
-    this.navigationService.addToCart(userid, productid, orderedQty, toAddress, toPinCode, toMobileNo, bidPrice).subscribe((res) => {
+    this.navigationService.addToCart(userid, productid, orderedQty, toAddress, toPinCode, toMobileNo, bidPrice).subscribe((res: any) => {
       if (res.toString() === 'inserted') this.changeCart.next(1);
     });
   }
@@ -136,7 +136,7 @@ export class UtilityService {
     let productid = product.id;
     let userid = this.getUser().id;
 
-    this.navigationService.removeFromCart(userid, productid).subscribe((res) => {
+    this.navigationService.removeFromCart(userid, productid).subscribe((res: any) => {
       if (res.toString() === 'deleted') this.changeCart.next(1);
     });
   }

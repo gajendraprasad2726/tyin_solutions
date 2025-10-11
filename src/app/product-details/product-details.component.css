@@ -17,15 +17,28 @@
   margin-top: 5px;
 }
 
-.bid-button{
-  font-size: 0.8rem;
+.bid-button {
+  font-size: 0.75rem;
+  padding: 4px 10px;
   border: none;
   border-radius: 4px;
-  background-color: maroon; /* Green background for bid button */
+  background-color: maroon;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: auto; /* Shrink to fit content */
+  max-width: 100%;
 }
+
+/*.bid-button{
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background-color: maroon;*/ /* Green background for bid button */
+  /*color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}*/
 .org-details-text {
   word-break: break-word; /* breaks long words */
   white-space: normal; /* allows wrapping */
@@ -168,33 +181,33 @@ input[type="number"] {
 
 .label {
   display: inline-block;
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 0.85rem;
   padding: 6px 14px;
   border-radius: 20px;
-  color: white;
-  text-transform: uppercase;
+  color: black;
+  /*text-transform: uppercase;*/
   letter-spacing: 0.05em;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   user-select: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /*transition: background-color 0.3s ease, box-shadow 0.3s ease;*/
   margin: 5px 0;
 }
 
 /* Discounted Deals style */
 .discounted-label {
-  background: linear-gradient(135deg, #2196F3, #21CBF3);
+  background: white;
   border: 1px solid #1E88E5;
   cursor: pointer;
 }
 
-  .discounted-label:hover {
+/*  .discounted-label:hover {
     background: linear-gradient(135deg, #1976D2, #1E88E5);
     box-shadow: 0 4px 12px rgba(33, 203, 243, 0.6);
-  }
+  }*/
 
 /* Scrap Market style */
-.scrap-label {
+/*.scrap-label {
   background: linear-gradient(135deg, #FF5722, #FF7043);
   border: 1px solid #E64A19;
   cursor: default;
@@ -203,11 +216,16 @@ input[type="number"] {
   .scrap-label:hover {
     background: linear-gradient(135deg, #E64A19, #F4511E);
     box-shadow: 0 4px 12px rgba(255, 112, 67, 0.6);
-  }
+  }*/
 
 
 /* Responsive Design */
 @media (max-width: 786px) {
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
   .product-details-background {
     padding: 8px; /* Reduce padding for very small screens */
   }
@@ -248,5 +266,20 @@ input[type="number"] {
     color: red;
     font-size: 0.75rem;
     margin-top: 4px;
+  }
+
+  .product-image {
+    width: 100%;
+    max-width: 300px; /* Prevent stretching on large screens */
+    height: auto;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+
+  .bid-button {
+    font-size: 0.65rem;
+    padding: 4px 8px;
+    width: 100%; /* Optional: full width on mobile */
+    text-align: center;
   }
 }

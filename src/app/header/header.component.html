@@ -3,8 +3,8 @@
     <a class="navbar-brand" routerLink="/home">TYIn</a>
     <ul class="navbar-nav">
       <li class="nav-item dropdown" *ngFor="let item of navigationList; let i = index" [ngClass]="{
-    'category-products': (item.category | titlecase) === 'Products',
-    'category-discounted': (item.category | titlecase) === 'Special Offers',
+    'category-products': (item.category | titlecase) === 'Quality Materials',
+    'category-discounted': (item.category | titlecase) === 'Overstock Deals',
     'category-scrap': (item.category | titlecase) === 'Scrap Market'
   }">
         <a class="nav-link dropdown-toggle"
@@ -14,8 +14,8 @@
            data-bs-toggle="dropdown"
            aria-expanded="false">
           {{
-        (item.category | titlecase) === 'Products' ? 'Products' :
-        (item.category | titlecase) === 'Special Offers' ? 'Special Offers' :
+        (item.category | titlecase) === 'Quality Materials' ? 'Quality Materials' :
+        (item.category | titlecase) === 'Overstock Deals' ? 'Overstock Deals' :
         (item.category | titlecase) === 'Scrap Market' ? 'Scrap Market' :
         item.category
           }}

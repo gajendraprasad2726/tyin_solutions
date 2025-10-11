@@ -2,11 +2,11 @@
   <div class="grid-container">
     <!-- Profile Image of Product -->
     <div class="">
-      <div *ngIf="product.productCategory?.category === 'Special Offers'" class="label discounted-label">
-        Special Offers
+      <div *ngIf="product.productCategory?.category === 'Overstock Deals'" class="label discounted-label">
+        Why Pay More? Get Overstock for Less.
       </div>
-      <div *ngIf="product.productCategory?.category === 'Scrap Market'" class="label scrap-label">
-        Scrap Market
+      <div *ngIf="product.productCategory?.category === 'Scrap Market'" class="label discounted-label">
+        Turning Leftovers into Greener Future.
       </div>
 
       <img class="product-image" src="../../assets/Images/{{product.productCategory?.subCategory}}/{{imageIndex}}.jpg">
@@ -41,7 +41,7 @@
           <h5 class="card-text-detail text-dark">Description</h5>
           <pre style="white-space: pre-wrap; text-align: justify;">{{ product.description }}</pre>
         </div>
-        <div class="card-body-detail" *ngIf="product.productCategory?.category === 'Products' || product.productCategory?.category === 'Special Offers'">
+        <div class="card-body-detail" *ngIf="product.productCategory?.category === 'Quality Materials' || product.productCategory?.category === 'Overstock Deals'">
           <div class="row">
             <div class="col-md-3 col-sm-6" *ngIf="product.grnNumber?.trim()">
               <span class="text-dark"><u>GRN Number:</u> {{product.grnNumber}}</span>
@@ -111,7 +111,7 @@
                 <input type="number" name="bidPrice" [(ngModel)]="product.bidPrice" placeholder="Enter Your Price" />
               </div>
               <!--</div>
-        <div class="col" *ngIf="!buyFlag && !cartFlag">-->
+              <div class="col" *ngIf="!buyFlag && !cartFlag">-->
               <button *ngIf="!buyFlag && !cartFlag" type="button" [disabled]="!utilityService.isLoggedIn()" class="bid-button" (click)="enableBidPrice()">
                 Negotiate Price
                 <span *ngIf="!utilityService.isLoggedIn()">(Login Required)</span>
@@ -202,7 +202,7 @@
     </div>
     <div class="row mt-4">
       <div class="col col-sm" *ngIf="sellerUser?.userOrganizationDetails?.trim()">
-        <span class="org-details-text text-dark"  style="white-space: pre-wrap; text-align: justify;">{{sellerUser?.userOrganizationDetails}}</span>
+        <span class="org-details-text text-dark" style="white-space: pre-wrap; text-align: justify;">{{sellerUser?.userOrganizationDetails}}</span>
       </div>
     </div>
     <br />
@@ -237,4 +237,4 @@
     </ng-template>
   </div>
 </div>
-<!--</div>-->
+

@@ -19,50 +19,58 @@
       <div class="col">
         <label for="productCategoryId" class="form-label">Product Type <span class="text-danger">*</span></label>
         <select class="form-input" name="productCategoryId" id="productCategoryId" formControlName="productCategoryId">
-          <option value=1 *ngIf="selectedCategory === 'Products'">Apparel & Fashion</option>
-          <option value=2 *ngIf="selectedCategory === 'Products'">Home & Kitchen</option>
-          <option value=3 *ngIf="selectedCategory === 'Products'">Sports & Bags</option>
-          <option value=4 *ngIf="selectedCategory === 'Products'">Gifts & Toys</option>
-          <option value=5 *ngIf="selectedCategory === 'Products'">Furniture</option>
-          <option value=6 *ngIf="selectedCategory === 'Products'">Plastics & Products</option>
-          <option value=7 *ngIf="selectedCategory === 'Products'">Chemicals</option>
-          <option value=8 *ngIf="selectedCategory === 'Products'">Construction & Real Estate</option>
-          <option value=9 *ngIf="selectedCategory === 'Products'">Equipments & Machinary</option>
-          <option value=10 *ngIf="selectedCategory === 'Products'">Books & Stationary</option>
-          <option value=11 *ngIf="selectedCategory === 'Products'">Automobile</option>
-          <option value=12 *ngIf="selectedCategory === 'Products'">Industrial Supplies</option>
-          <option value=13 *ngIf="selectedCategory === 'Products'">Packaging & Paper</option>
-          <option value=14 *ngIf="selectedCategory === 'Products'">Other</option>
-          <option value=15 *ngIf="selectedCategory === 'Special Offers'">Apparel & Fashion</option>
-          <option value=16 *ngIf="selectedCategory === 'Special Offers'">Home & Kitchen</option>
-          <option value=17 *ngIf="selectedCategory === 'Special Offers'">Sports & Bags</option>
-          <option value=18 *ngIf="selectedCategory === 'Special Offers'">Gifts & Toys</option>
-          <option value=19 *ngIf="selectedCategory === 'Special Offers'">Furniture</option>
-          <option value=20 *ngIf="selectedCategory === 'Special Offers'">Plastics & Products</option>
-          <option value=21 *ngIf="selectedCategory === 'Special Offers'">Chemicals</option>
-          <option value=22 *ngIf="selectedCategory === 'Special Offers'">Construction & Real Estate </option>
-          <option value=23 *ngIf="selectedCategory === 'Special Offers'">Equipments & Machinary</option>
-          <option value=24 *ngIf="selectedCategory === 'Special Offers'">Books & Stationary</option>
-          <option value=25 *ngIf="selectedCategory === 'Special Offers'">Automotive Parts</option>
-          <option value=26 *ngIf="selectedCategory === 'Special Offers'">Industrial Supplies</option>
-          <option value=27 *ngIf="selectedCategory === 'Special Offers'">Packaging & Paper</option>
-          <option value=28 *ngIf="selectedCategory === 'Special Offers'">Other</option>
-          <option value=29 *ngIf="selectedCategory === 'Scrap Market'">Plastic</option>
-          <option value=30 *ngIf="selectedCategory === 'Scrap Market'">Wooden</option>
-          <option value=31 *ngIf="selectedCategory === 'Scrap Market'">Construction</option>
-          <option value=32 *ngIf="selectedCategory === 'Scrap Market'">Biomedical</option>
-          <option value=33 *ngIf="selectedCategory === 'Scrap Market'">Electronic</option>
-          <option value=34 *ngIf="selectedCategory === 'Scrap Market'">Hazardous</option>
-          <option value=35 *ngIf="selectedCategory === 'Scrap Market'">Battery</option>
-          <option value=36 *ngIf="selectedCategory === 'Scrap Market'">Domestic</option>
-          <option value=37 *ngIf="selectedCategory === 'Scrap Market'">Agriculture</option>
-          <option value=38 *ngIf="selectedCategory === 'Scrap Market'">Other</option>
+          <option value=1 *ngIf="selectedCategory === 'Quality Materials'">Cement</option>
+          <option value=2 *ngIf="selectedCategory === 'Quality Materials'">Brick</option>
+          <option value=3 *ngIf="selectedCategory === 'Quality Materials'">Concrete Block</option>
+          <option value=4 *ngIf="selectedCategory === 'Quality Materials'">Aggregate</option>
+          <option value=5 *ngIf="selectedCategory === 'Quality Materials'">Sand</option>
+          <option value=6 *ngIf="selectedCategory === 'Quality Materials'">Reinforcement Steel</option>
+          <option value=7 *ngIf="selectedCategory === 'Quality Materials'">Structural Steel</option>
+          <option value=8 *ngIf="selectedCategory === 'Quality Materials'">Shuttering Material</option>
+          <option value=9 *ngIf="selectedCategory === 'Quality Materials'">Timber</option>
+          <option value=10 *ngIf="selectedCategory === 'Quality Materials'">Plywood</option>
+          <option value=11 *ngIf="selectedCategory === 'Quality Materials'">Pre-Fabricated</option>
+          <option value=12 *ngIf="selectedCategory === 'Quality Materials'">Interior Finishing</option>
+          <option value=13 *ngIf="selectedCategory === 'Quality Materials'">Mechanical Items</option>
+          <option value=14 *ngIf="selectedCategory === 'Quality Materials'">Electrical Items</option>
+          <option value=15 *ngIf="selectedCategory === 'Quality Materials'">Safety Items</option>
+          <option value=16 *ngIf="selectedCategory === 'Quality Materials'">Plumbing</option>
+          <option value=17 *ngIf="selectedCategory === 'Quality Materials'">Hardware</option>
+          <option value=18 *ngIf="selectedCategory === 'Quality Materials'">Fasteners</option>
+          <option value=19 *ngIf="selectedCategory === 'Quality Materials'">Site Supplies</option>
+          <option value=20 *ngIf="selectedCategory === 'Overstock Deals'">Cement</option>
+          <option value=21 *ngIf="selectedCategory === 'Overstock Deals'">Brick</option>
+          <option value=22 *ngIf="selectedCategory === 'Overstock Deals'">Concrete Block</option>
+          <option value=23 *ngIf="selectedCategory === 'Overstock Deals'">Aggregate</option>
+          <option value=24 *ngIf="selectedCategory === 'Overstock Deals'">Sand</option>
+          <option value=25 *ngIf="selectedCategory === 'Overstock Deals'">Reinforcement Steel</option>
+          <option value=26 *ngIf="selectedCategory === 'Overstock Deals'">Structural Steel</option>
+          <option value=27 *ngIf="selectedCategory === 'Overstock Deals'">Shuttering Material</option>
+          <option value=28 *ngIf="selectedCategory === 'Overstock Deals'">Timber</option>
+          <option value=29 *ngIf="selectedCategory === 'Overstock Deals'">Plywood</option>
+          <option value=30 *ngIf="selectedCategory === 'Overstock Deals'">Pre-Fabricated</option>
+          <option value=31 *ngIf="selectedCategory === 'Overstock Deals'">Interior Finishing</option>
+          <option value=32 *ngIf="selectedCategory === 'Overstock Deals'">Mechanical Items</option>
+          <option value=33 *ngIf="selectedCategory === 'Overstock Deals'">Electrical Items</option>
+          <option value=34 *ngIf="selectedCategory === 'Overstock Deals'">Safety Items</option>
+          <option value=35 *ngIf="selectedCategory === 'Overstock Deals'">Plumbing</option>
+          <option value=36 *ngIf="selectedCategory === 'Overstock Deals'">Hardware</option>
+          <option value=37 *ngIf="selectedCategory === 'Overstock Deals'">Fasteners</option>
+          <option value=38 *ngIf="selectedCategory === 'Overstock Deals'">Site Supplies</option>
+          <option value=39 *ngIf="selectedCategory === 'Scrap Market'">Plastic</option>
+          <option value=40 *ngIf="selectedCategory === 'Scrap Market'">Wooden</option>
+          <option value=41 *ngIf="selectedCategory === 'Scrap Market'">Construction</option>
+          <option value=42 *ngIf="selectedCategory === 'Scrap Market'">Biomedical</option>
+          <option value=43 *ngIf="selectedCategory === 'Scrap Market'">Electronic</option>
+          <option value=44 *ngIf="selectedCategory === 'Scrap Market'">Hazardous</option>
+          <option value=45 *ngIf="selectedCategory === 'Scrap Market'">Battery</option>
+          <option value=46 *ngIf="selectedCategory === 'Scrap Market'">Domestic</option>
+          <option value=47 *ngIf="selectedCategory === 'Scrap Market'">Agriculture</option>
         </select>
         <div class="form-error" *ngIf="ProductCategoryId.errors?.['required'] && (ProductCategoryId.dirty || ProductCategoryId.touched)">
           Product Type is Required
         </div>
       </div>
-
     </div>
     <div class="row form-container">
       <div class="col-3">
@@ -205,7 +213,7 @@
         </div>
       </div>
     </div>
-    <div class="row form-container" *ngIf="selectedCategory === 'Products' || selectedCategory === 'Special Offers'">
+    <div class="row form-container" *ngIf="selectedCategory === 'Quality Materials' || selectedCategory === 'Overstock Deals'">
       <div class="row">
         <div class="col-3">
           <label for="grnNumber" class="form-label">GRN No</label>

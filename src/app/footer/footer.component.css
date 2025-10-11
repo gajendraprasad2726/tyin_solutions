@@ -1,27 +1,23 @@
 .footer {
-  background: linear-gradient(45deg, #301717, #241a08, #fdbb2d); /* Gradient background */
+  background: linear-gradient(45deg, #301717, #241a08, #fdbb2d);
   color: #fff;
-  padding: 10px 10px;
+  padding: 20px 10px;
   font-family: 'Arial', sans-serif;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.footer-logo-img {
-  width: 120px;
-  height: auto;
+  gap: 20px;
 }
 
 .footer-links {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -29,11 +25,13 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
   }
 
     .footer-links ul li {
-      display: inline;
-      margin-right: 20px;
+      display: inline-block;
     }
 
   .footer-links a {
@@ -49,12 +47,13 @@
 
 .footer-socials {
   display: flex;
-  gap: 20px;
+  gap: 15px;
+  align-items: center;
 }
 
 .social-icon {
   color: #fff;
-  font-size: 24px;
+  font-size: 22px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -65,7 +64,7 @@
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
-  font-size: 10px;
+  font-size: 12px;
   opacity: 0.7;
 }
 
@@ -73,15 +72,35 @@
     margin: 0;
   }
 
-
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-  .footer-logo-img {
-    width: 100px;
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .footer-links a {
-    font-size: 14px;
+  .footer-links {
+    justify-content: center;
+  }
+
+    .footer-links ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+      .footer-links ul li {
+        margin-right: 0;
+      }
+
+    .footer-links a {
+      font-size: 13px;
+    }
+
+  .footer-socials {
+    justify-content: center;
+    margin-top: 15px;
   }
 
   .social-icon {
@@ -89,7 +108,7 @@
   }
 
   .footer-bottom {
-    font-size: 12px;
+    font-size: 11px;
+    margin-top: 15px;
   }
 }
-

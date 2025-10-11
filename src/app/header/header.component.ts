@@ -66,7 +66,7 @@ export class HeaderComponent implements OnInit {
         }
       }
       // Define your desired category order here:
-      const order = ['Products', 'Special Offers', 'Scrap Market'];
+      const order = ['Quality Materials', 'Overstock Deals', 'Scrap Market'];
 
       // Sort navigationList by this order:
       this.navigationList.sort((a, b) => {

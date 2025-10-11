@@ -6,7 +6,7 @@
     </div>
     <div class="card-body" OpenProductDetails [productId]="product.id" [buyFlag]="buyFlag">
       <h5 class="card-title "> {{product.title}} </h5>
-      <p class="card-text"> ------------------------------ </p>
+      <p class="card-text"> --------------- </p>
       <p class="card-text " *ngIf="((product.quantity - cartOrderedQty.qty) > 0)"> Qty : {{(product.quantity-cartOrderedQty.qty)| number:'1.0-0' }} {{product.uom }} </p>
       <p class="card-text " *ngIf="((product.quantity - cartOrderedQty.qty) <= 0)"> Out of Stock </p>
       <p class="card-text "> Price : {{product.price| number:'1.0-0' }} Rs/{{product.uom}} </p>

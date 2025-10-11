@@ -77,12 +77,12 @@ export class UploadmaterialComponent implements OnInit
       this.selectedCategory = val;
 
       // Auto-update subCategoryId when category changes
-      if (val === 'Products') {
+      if (val === 'Quality Materials') {
         this.productForm.get('productCategoryId')?.setValue(1);  // Reinforcement Steel
       } else if (val === 'Scrap Market') {
-        this.productForm.get('productCategoryId')?.setValue(30);  // Plastic
-      } else if (val === 'Special Offers') {
-        this.productForm.get('productCategoryId')?.setValue(15);  // Plastic
+        this.productForm.get('productCategoryId')?.setValue(39);  // Plastic
+      } else if (val === 'Overstock Deals') {
+        this.productForm.get('productCategoryId')?.setValue(20);  
       } else {
         this.productForm.get('productCategoryId')?.reset();      // Optional fallback
       }

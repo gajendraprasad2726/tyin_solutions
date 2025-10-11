@@ -21,7 +21,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/routes.json", 
               "src/web.config"
+               
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -30,6 +32,14 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "canvg",
+              "core-js",
+              "raf",
+              "rgbcolor",
+              "jspdf",
+              "html2canvas"
             ]
           },
           "configurations": {

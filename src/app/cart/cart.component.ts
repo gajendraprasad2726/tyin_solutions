@@ -167,7 +167,6 @@ export class CartComponent implements OnInit {
     )
   }
 
-
   async generateQuotationPDF() {
     const doc = new jsPDF();
 
@@ -196,7 +195,7 @@ export class CartComponent implements OnInit {
       const sellerName = seller?.userOrganizationName || 'Seller';
       const productName = item.product.title || 'Product';
       const qty = item.orderedQty || 0;
-      const rate = item.product.price || 0;
+      const rate = item.bidPrice || item.product.price ;
       const amount = qty * rate;
 
       return [

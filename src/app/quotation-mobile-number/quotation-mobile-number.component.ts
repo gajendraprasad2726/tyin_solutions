@@ -20,7 +20,7 @@ export class QuotationMobileNumberComponent implements OnInit {
     this.mobileForm = new FormGroup({
       mobileNumber: new FormControl('', [
         Validators.required,  // Required field
-        Validators.pattern(/^[0-9]{10,10}$/)  // Pattern for 10 to 15 digits (no + sign)
+        Validators.pattern(/^\+?[0-9\s\-().]{8,20}$/)
       ])
     });
 }

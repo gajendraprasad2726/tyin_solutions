@@ -47,6 +47,7 @@
 .about-us-content {
   font-size: 0.8em;
   color: white;
+  text-align: justify;
 }
 p {
   margin-bottom: 25px; /* Adjust the value to your desired gap */
@@ -204,6 +205,8 @@ h5 {
     color: #666; /* Lighter color for the description */
     line-height: 1.5; /* Space out lines in the description */
     margin-top: 0; /* No top margin */
+    text-align:justify;
+
   }
 
 

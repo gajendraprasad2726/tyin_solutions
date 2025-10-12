@@ -132,9 +132,11 @@
               <input type="text" class="form-input" id="productContactNo" formControlName="productContactNo">
             </div>
             <div class="form-error"
-                 *ngIf="ProductContactNo.errors?.['required'] && (ProductContactNo.dirty || ProductContactNo.touched)">
-              Contact No is Required
+                 *ngIf="(ProductContactNo.errors?.['required'] || ProductContactNo.errors?.['pattern']) && (ProductContactNo.dirty || ProductContactNo.touched)">
+              <span *ngIf="ProductContactNo.errors?.['required']">Contact No is Required</span>
+              <span *ngIf="ProductContactNo.errors?.['pattern']">Enter a valid 10-digit Indian mobile number</span>
             </div>
+
           </div>
         </div>
         <div class="row">

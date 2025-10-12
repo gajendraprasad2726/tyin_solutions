@@ -66,7 +66,13 @@ export class UploadmaterialComponent implements OnInit
       length: [''],
       size: [''],
       shape: [''],
-      productContactNo: ['', [Validators.required]],
+      productContactNo: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[6-9]\\d{9}$')  // Indian 10-digit mobile number
+        ],
+      ],
       userId: this.utilityService.getUser().id
     });
 

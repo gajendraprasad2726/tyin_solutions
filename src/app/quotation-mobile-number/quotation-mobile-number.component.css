@@ -79,6 +79,11 @@ input[type="text"] {
     box-shadow: 0 0 6px #1de9b6;
   }
 
+  input[type="text"]::placeholder {
+    color: #cccccc; /* Light gray – adjust if needed */
+    opacity: 1; /* Ensure it's not transparent */
+  }
+
 /* === ERROR MESSAGE === */
 .error-message {
   color: #e74c3c;

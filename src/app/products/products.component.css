@@ -1,22 +1,19 @@
-.filters-state {
+.filters-container {
   display: flex;
-  justify-content: left;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 15%;
-  outline:auto;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.filters-state,
+.filters-city {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   color: blanchedalmond;
 }
 
-.filters-city {
-  display: flex;
-  justify-content: left;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 35%;
-  outline: auto;
-  color: blanchedalmond;
-}
 
 .filter-input {
   padding: 2px;
@@ -29,9 +26,7 @@
 
 .filter-text {
   position: relative;
-  color:black;
   font-weight: 500;
-  background-color: white;
 }
 
 .product-background {
@@ -51,26 +46,25 @@
 
 
 @media (max-width: 768px) {
-  .filters-state {
-    /*margin: 20px;*/
-    display: flex;
-    justify-content: left;
-    /*gap: 10px;*/
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 30%;
-    outline: auto;
-    color: blanchedalmond;
+  .filters-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 15px;
   }
 
+  .filters-state,
   .filters-city {
-    display: flex;
-    justify-content: left;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 60%;
-    outline: auto;
-    color: blanchedalmond;
+    justify-content: space-between;
+  }
+
+  .filter-input {
+    font-size: 12px;
+    flex: 1;
+  }
+
+  .filter-text {
+    font-size: 13px;
   }
 
   .filter-input {
@@ -78,9 +72,6 @@
     padding: 0.5px;
   }
 
-  .filter-text {
-    font-size: 12px;
-  }
   .row {
     display: grid; /* Use grid layout */
     grid-template-columns: 1fr 1fr; /* Create two equal-width columns */
